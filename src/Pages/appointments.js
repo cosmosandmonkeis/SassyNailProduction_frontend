@@ -7,14 +7,10 @@ import AuthAppointment from "../Components/AuthAppointment";
 function Appointment(props) {
 
     const {user} = useContext(AuthContext)
-    return user ? (
+    return (
         <div>
             <Banner bigheader='View or Make Appointments!' subtext='Appointments need to be confirmed'/>
-            <AuthAppointment props={props}/>
-        </div>
-    ) : (
-        <div>
-            <Banner bigheader='View or Make Appointments!' subtext='Appointments need to be confirmed'/>
+            {user ? <AuthAppointment props={props}/> : <h1>Login first!</h1>}
         </div>
     )
 }

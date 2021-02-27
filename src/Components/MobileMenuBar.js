@@ -10,14 +10,14 @@ function MobileMenuBar() {
     const pathname = window.location.pathname
     const path = pathname === '/' ? 'home' : pathname.substr(1)
 
-    const [activeItem, setActiveItem] = useState(path)
+    const [activeItem, setActiveItem] = useState(path[0].toUpperCase() + path.substr(1))
 
     const handleItemClick = (e, {name}) => setActiveItem(name)
 
     return (user) ? (
         (
             <Menu size='massive' color='teal'>
-                <Dropdown item text='Navigation'>
+                <Dropdown item text={activeItem}>
                     <Dropdown.Menu>
                         <Menu.Item
                             name={user.username}
@@ -27,29 +27,29 @@ function MobileMenuBar() {
                             to='/'
                         />
                         <Menu.Item
-                            name='services'
-                            active={activeItem === 'services'}
+                            name='Services'
+                            active={activeItem === 'Services'}
                             onClick={handleItemClick}
                             as={Link}
                             to='/services'
                         />
                         <Menu.Item
-                            name='bookings'
-                            active={activeItem === 'bookings'}
+                            name='Bookings'
+                            active={activeItem === 'Bookings'}
                             onClick={handleItemClick}
                             as={Link}
                             to='/bookings'
                         />
                         <Menu.Item
-                            name='profile'
-                            active={activeItem === 'profile'}
+                            name='Profile'
+                            active={activeItem === 'Profile'}
                             onClick={handleItemClick}
                             as={Link}
                             to='/profile'
                         />
                         <Menu.Item
-                            name='logout'
-                            active={activeItem === 'logout'}
+                            name='Logout'
+                            active={activeItem === 'Logout'}
                             onClick={logout}
                         />
                     </Dropdown.Menu>
@@ -58,39 +58,39 @@ function MobileMenuBar() {
         )
     ) : (
         <Menu size='massive' color='teal'>
-            <Dropdown item text='Navigation'>
+            <Dropdown item text={activeItem}>
                 <Dropdown.Menu>
                     <Menu.Item
-                        name='home'
-                        active={activeItem === 'home'}
+                        name='Home'
+                        active={activeItem === 'Home'}
                         onClick={handleItemClick}
                         as={Link}
                         to='/'
                     />
                     <Menu.Item
-                        name='services'
-                        active={activeItem === 'services'}
+                        name='Services'
+                        active={activeItem === 'Services'}
                         onClick={handleItemClick}
                         as={Link}
                         to='/services'
                     />
                     <Menu.Item
-                        name='bookings'
-                        active={activeItem === 'bookings'}
+                        name='Bookings'
+                        active={activeItem === 'Bookings'}
                         onClick={handleItemClick}
                         as={Link}
                         to='/bookings'
                     />
                     <Menu.Item
-                        name='login'
-                        active={activeItem === 'login'}
+                        name='Login'
+                        active={activeItem === 'Login'}
                         onClick={handleItemClick}
                         as={Link}
                         to='/login'
                     />
                     <Menu.Item
-                        name='register'
-                        active={activeItem === 'register'}
+                        name='Register'
+                        active={activeItem === 'Register'}
                         onClick={handleItemClick}
                         as={Link}
                         to='/register'
@@ -98,6 +98,7 @@ function MobileMenuBar() {
                 </Dropdown.Menu>
             </Dropdown>
         </Menu>
+
     )
 
 }
