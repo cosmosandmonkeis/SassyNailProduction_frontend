@@ -1,52 +1,23 @@
 import React, {useContext} from 'react'
 import gql from 'graphql-tag'
-import {useQuery, useMutation} from "@apollo/client";
+import {useQuery} from "@apollo/client";
 import {AuthContext} from "../context/auth";
-import {Button, Dimmer, Form, Item, Loader} from "semantic-ui-react";
-import {useForm} from "../util/hooks";
+import {Dimmer,  Item, Loader} from "semantic-ui-react";
+import MakeAppointmentModal from "./MakeAppointmentModal";
 
 
 function AuthAppointment({props}) {
 
     const {user} = useContext(AuthContext)
 
-    const initialState = {
-        description: ''
-    }
-
-    const {onChange, onSubmit, values} = useForm(createAppointmentCallback, initialState)
 
     const {loading_bookings, data: {getUserBookingsHistory: bookings} = {}} =
         useQuery(FETCH_USER_APP_BOOKINGS, {variables: {username: user ? user.username : null}})
 
-    const [sendAppointMutation, {loading_create}] = useMutation(MAKE_APP_BOOKING, {
-        update(_) {
-            props.history.push('/success')
-        },
-        variables: values
-    })
-
-
-    function createAppointmentCallback() {
-        sendAppointMutation()
-    }
-
     return (
         <div>
             <div className='form-container'>
-                <Form onSubmit={onSubmit} noValidate className={loading_create ? 'loading' : ''}>
-                    <h1> Make a new booking! </h1>
-                    <Form.Input
-                        label='description'
-                        placeholder='description...'
-                        name='description'
-                        value={values.description}
-                        onChange={onChange}
-                    />
-                    <Button type='submit' primary>
-                        Create Appointment Booking!
-                    </Button>
-                </Form>
+                <MakeAppointmentModal props={props}/>
                 <h1> Your past bookings listed here </h1>
                 <ul>
                     {
@@ -88,17 +59,5 @@ gql`
     }
 `
 
-const MAKE_APP_BOOKING =
-gql`
-    mutation createAppointmentBooking($description : String!)
-    {
-        createAppointmentBooking(description: $description)
-        {
-            id
-            createdAt
-            confirmed
-            serviceType
-        }
-    }
-`
+
 export default AuthAppointment
