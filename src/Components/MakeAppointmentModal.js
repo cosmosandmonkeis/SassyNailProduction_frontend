@@ -1,18 +1,32 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Button, Form, Modal} from "semantic-ui-react";
 import {useMutation} from "@apollo/client";
-import {useForm} from "../util/hooks";
 import gql from "graphql-tag";
+import {DateTimeInput} from "semantic-ui-calendar-react";
+
 
 function CreateAppointmentModal({props}) {
 
-    const [open, setOpen] = React.useState(false)
+    const [open, setOpen] = useState(false)
 
     const initialState = {
-        description: ''
+        description: '',
+        serviceDate: ''
+    }
+    const [values, setValues] = useState(initialState)
+
+    const onChange = (event) => {
+        setValues({...values, [event.target.name]: event.target.value})
     }
 
-    const {onChange, onSubmit, values} = useForm(createAppointmentCallback, initialState)
+    const onSubmit = event => {
+        event.preventDefault()
+        sendAppointMutation()
+    }
+
+    function handleDateChange(name, value) {
+        setValues({...values, serviceDate:value})
+    }
 
     const [sendAppointMutation, {loading_create}] = useMutation(MAKE_APP_BOOKING, {
         update(_) {
@@ -21,22 +35,14 @@ function CreateAppointmentModal({props}) {
         variables: values
     })
 
-
-    function createAppointmentCallback() {
-        sendAppointMutation()
-    }
-
     return (
-        <Modal
-            onClose={() => setOpen(false)}
-            onOpen={() => setOpen(true)}
-            open={open}
-            trigger={<Button primary>Let's make an appointment!</Button>}
-        >
+        <Modal onClose={() => setOpen(false)}
+               onOpen={() => setOpen(true)}
+               open={open}
+               trigger={<Button primary>Let's make an appointment!</Button>}>
             <Modal.Header>Make an appointment!</Modal.Header>
             <Modal.Content>
                 <Form onSubmit={onSubmit} noValidate className={loading_create ? 'loading' : ''}>
-                    <h1> Make a new booking! </h1>
                     <Form.Input
                         label='description'
                         placeholder='description...'
@@ -44,11 +50,17 @@ function CreateAppointmentModal({props}) {
                         value={values.description}
                         onChange={onChange}
                     />
-                    <Button type='submit' primary
-                            labelPosition='right'
-                            icon='checkmark'
-                            content="Create Appointment Booking!"
+                    <DateTimeInput
+                        clearable
+                        name="date"
+                        value={values.serviceDate}
+                        onChange={(a, {name, value}) => handleDateChange(name, value)}
                     />
+                    <Button
+                        type='submit' primary
+                        labelPosition='right'
+                        icon='checkmark'
+                        content="Create Appointment Booking!"/>
                 </Form>
             </Modal.Content>
             <Modal.Actions>
@@ -56,16 +68,15 @@ function CreateAppointmentModal({props}) {
                     I change my mind!
                 </Button>
             </Modal.Actions>
-
         </Modal>
     )
 }
 
 const MAKE_APP_BOOKING =
 gql`
-    mutation createAppointmentBooking($description : String!)
+    mutation createAppointmentBooking($description : String!, $serviceDate : String!)
     {
-        createAppointmentBooking(description: $description)
+        createAppointmentBooking(description: $description, serviceDate: $serviceDate)
         {
             id
             createdAt
