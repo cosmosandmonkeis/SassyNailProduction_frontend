@@ -39,7 +39,10 @@ function CreateAppointmentModal({props}) {
     return (
         <Modal onClose={() => setOpen(false)}
                open={open}
-               onOpen={() => setOpen(true)}
+               onOpen={() => {
+                   setValues({})
+                   setOpen(true)
+               }}
                trigger={
                    <Grid centered>
                        <Button primary>Let's make an appointment!</Button>
@@ -56,9 +59,10 @@ function CreateAppointmentModal({props}) {
                         onChange={onChange}
                     />
                     <DateTimeInput
-                        clearable
                         name="date"
                         value={values.serviceDate}
+                        minDate={moment()}
+                        maxDate={moment().add(1, 'month')}
                         onChange={(a, {name, value}) => handleDateChange(name, value)}
                     />
                     <Button
