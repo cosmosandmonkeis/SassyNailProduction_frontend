@@ -19,8 +19,8 @@ function AppointmentCardGroup() {
                         <Loader/>
                     </Dimmer>) : (
                     bookings &&
-                    bookings.map((booking) => (
-                        <Card>
+                    bookings.map((booking, index) => (
+                        <Card key={index}>
                             <CardContent>
                                 <Card.Header>
                                     {booking.createdAt}

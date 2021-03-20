@@ -3,7 +3,7 @@ import {Button, Form, Modal, Grid} from "semantic-ui-react";
 import {useMutation} from "@apollo/client";
 import gql from "graphql-tag";
 import {DateTimeInput} from "semantic-ui-calendar-react";
-
+import moment from 'moment'
 
 function CreateAppointmentModal({props}) {
 
@@ -25,7 +25,8 @@ function CreateAppointmentModal({props}) {
     }
 
     function handleDateChange(name, value) {
-        setValues({...values, serviceDate:value})
+        const iso_val = moment().toISOString(value)
+        setValues({...values, serviceDate:iso_val})
     }
 
     const [sendAppointMutation, {loading_create}] = useMutation(MAKE_APP_BOOKING, {
