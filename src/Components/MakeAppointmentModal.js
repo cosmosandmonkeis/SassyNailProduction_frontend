@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Button, Form, Modal} from "semantic-ui-react";
+import {Button, Form, Modal, Grid} from "semantic-ui-react";
 import {useMutation} from "@apollo/client";
 import gql from "graphql-tag";
 import {DateTimeInput} from "semantic-ui-calendar-react";
@@ -37,9 +37,13 @@ function CreateAppointmentModal({props}) {
 
     return (
         <Modal onClose={() => setOpen(false)}
-               onOpen={() => setOpen(true)}
                open={open}
-               trigger={<Button primary>Let's make an appointment!</Button>}>
+               onOpen={() => setOpen(true)}
+               trigger={
+                   <Grid centered>
+                       <Button primary>Let's make an appointment!</Button>
+                   </Grid>
+               }>
             <Modal.Header>Make an appointment!</Modal.Header>
             <Modal.Content>
                 <Form onSubmit={onSubmit} noValidate className={loading_create ? 'loading' : ''}>

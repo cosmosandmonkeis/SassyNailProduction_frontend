@@ -1,6 +1,7 @@
 import React from 'react'
 import MakeAppointmentModal from "./MakeAppointmentModal";
 import AppointmentCardGroup from "./AppointmentCardGroup";
+import {Header} from "semantic-ui-react";
 
 
 function AuthAppointment({props}) {
@@ -10,7 +11,9 @@ function AuthAppointment({props}) {
         <div>
             <div className='form-container'>
                 <MakeAppointmentModal props={props}/>
-                <h1> Your past bookings listed here </h1>
+                <Header as='h2' textAlign='center'>
+                    Your past bookings listed here
+                </Header>
                 <AppointmentCardGroup />
             </div>
         </div>
