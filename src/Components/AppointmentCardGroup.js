@@ -20,19 +20,19 @@ function AppointmentCardGroup() {
                     </Dimmer>) : (
                     bookings &&
                     bookings.map((booking) => (
-                            <Card>
-                                <CardContent>
-                                    <Card.Header>
-                                        {booking.createdAt}
-                                    </Card.Header>
-                                    <Card.Meta>
-                                        {booking.confirmed.toString()}
-                                    </Card.Meta>
-                                    <Card.Description>
-                                        {booking.serviceType}
-                                    </Card.Description>
-                                </CardContent>
-                            </Card>
+                        <Card>
+                            <CardContent>
+                                <Card.Header>
+                                    {booking.createdAt}
+                                </Card.Header>
+                                <Card.Meta>
+                                    {booking.confirmed.toString()}
+                                </Card.Meta>
+                                <Card.Description>
+                                    {booking.serviceType}
+                                </Card.Description>
+                            </CardContent>
+                        </Card>
                     ))
                 )
             }
