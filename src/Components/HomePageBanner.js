@@ -9,12 +9,10 @@ function HomePageBanner({props, big_header_text, subtext}) {
     return (
         <div className="home-hero-image">
             <div className="hero-text">
-                <Header
-                    size='huge'
-                    inverted>
+                <Header size='huge'
+                        inverted={true}>
                     {big_header_text}
-                    <Header.Subheader
-                        inverted>
+                    <Header.Subheader>
                         {subtext}
                     </Header.Subheader>
                 </Header>

@@ -8,6 +8,7 @@ import moment from 'moment'
 function CreateAppointmentModal({props}) {
 
     const [open, setOpen] = useState(false)
+    const [errors, setErrors] = useState({})
 
     const initialState = {
         description: '',
@@ -33,6 +34,10 @@ function CreateAppointmentModal({props}) {
         update(_) {
             props.history.push('/success')
         },
+        onError(err) {
+            console.log(err.name)
+            // setErrors(err.graphQLErrors[0].extensions.exception.errors)
+        },
         variables: values
     })
 
@@ -56,6 +61,7 @@ function CreateAppointmentModal({props}) {
                         placeholder='description...'
                         name='description'
                         value={values.description}
+                        error={!!errors.description}
                         onChange={onChange}
                     />
                     <DateTimeInput
@@ -64,6 +70,7 @@ function CreateAppointmentModal({props}) {
                         minDate={moment()}
                         maxDate={moment().add(1, 'month')}
                         onChange={(a, {name, value}) => handleDateChange(name, value)}
+                        // error={!!errors.dateString}
                     />
                     <Button
                         type='submit' primary
@@ -81,11 +88,16 @@ function CreateAppointmentModal({props}) {
     )
 }
 
-const MAKE_APP_BOOKING =
-gql`
-    mutation createAppointmentBooking($description : String!, $serviceDate : String!)
+const MAKE_APP_BOOKING = gql`
+    mutation createAppointmentBooking(
+        $description : String!
+        $serviceDate : String!
+    )
     {
-        createAppointmentBooking(description: $description, serviceDate: $serviceDate)
+        createAppointmentBooking(
+            description : $description
+            serviceDate : $serviceDate
+        )
         {
             id
             createdAt
