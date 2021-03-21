@@ -4,6 +4,7 @@ import {useMutation} from "@apollo/client";
 import gql from "graphql-tag";
 import {DateTimeInput} from "semantic-ui-calendar-react";
 import moment from 'moment'
+import DisplayErrorGroup from "./DisplayErrorGroup";
 
 function CreateAppointmentModal({props}) {
 
@@ -79,15 +80,7 @@ function CreateAppointmentModal({props}) {
                         icon='checkmark'
                         content="Create Appointment Booking!"/>
                 </Form>
-                {Object.keys(errors).length > 0 && (
-                    <div className='ui error message'>
-                        <ul className='list'>
-                            {Object.values(errors).map((value => (
-                                <li key={value}>{value}</li>
-                            )))}
-                        </ul>
-                    </div>
-                )}
+                <DisplayErrorGroup errors={errors}/>
             </Modal.Content>
             <Modal.Actions>
                 <Button color='black' onClick={() => setOpen(false)}>

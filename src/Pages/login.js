@@ -4,6 +4,7 @@ import gql from 'graphql-tag'
 import {useMutation} from "@apollo/client";
 import {useForm} from "../util/hooks";
 import {AuthContext} from "../context/auth";
+import DisplayErrorGroup from "../Components/DisplayErrorGroup";
 
 
 function Login(props) {
@@ -57,15 +58,7 @@ function Login(props) {
                     Login!
                 </Button>
             </Form>
-            {Object.keys(errors).length > 0 && (
-                <div className='ui error message'>
-                    <ul className='list'>
-                        {Object.values(errors).map((value => (
-                            <li key={value}>{value}</li>
-                        )))}
-                    </ul>
-                </div>
-            )}
+            <DisplayErrorGroup errors={errors}/>
         </div>
     )
 }
