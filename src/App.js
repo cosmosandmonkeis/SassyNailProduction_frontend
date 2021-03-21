@@ -9,7 +9,6 @@ import Login from './Pages/login'
 import Register from "./Pages/register";
 import Services from "./Pages/services";
 import Appointment from "./Pages/appointments";
-import Profile from "./Pages/profile";
 import {AuthProvider} from "./context/auth";
 import AuthRoute from "./util/AuthRoute";
 import ProtectRoute from "./util/ProtectRoute";
@@ -28,7 +27,6 @@ function App() {
                     <Route exact path='/bookings' component={Appointment}/>
                     <AuthRoute exact path='/login' component={Login}/>
                     <AuthRoute exact path='/register' component={Register}/>
-                    <ProtectRoute exact path='/profile' component={Profile}/>
                     <ProtectRoute exact path='/success' component={Success}/>
                     <Footer/>
                 </Router>

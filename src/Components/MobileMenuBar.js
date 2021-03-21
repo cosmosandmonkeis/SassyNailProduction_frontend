@@ -41,13 +41,6 @@ function MobileMenuBar() {
                             to='/bookings'
                         />
                         <Menu.Item
-                            name='Profile'
-                            active={activeItem === 'Profile'}
-                            onClick={handleItemClick}
-                            as={Link}
-                            to='/profile'
-                        />
-                        <Menu.Item
                             name='Logout'
                             active={activeItem === 'Logout'}
                             onClick={logout}

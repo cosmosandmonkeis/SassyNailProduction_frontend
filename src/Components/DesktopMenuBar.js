@@ -38,13 +38,6 @@ function DesktopMenuBar() {
                     as={Link}
                     to='/bookings'
                 />
-                <Menu.Item
-                    name='profile'
-                    active={activeItem === 'profile'}
-                    onClick={handleItemClick}
-                    as={Link}
-                    to='/profile'
-                />
                 <Menu.Menu position='right'>
                     <Menu.Item
                         name='logout'
