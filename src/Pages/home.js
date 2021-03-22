@@ -12,12 +12,16 @@ import {
     Image,
     Segment
 } from "semantic-ui-react";
+import {useViewport} from "../context/mobile";
 
 function Home(props) {
 
     const changeRoute = () => {
         props.history.push('/bookings')
     }
+
+    const size = useViewport()
+    const mobileItems = size.width < 500 ? 1 : 3
 
     return (
         <div>
@@ -122,8 +126,7 @@ function Home(props) {
                                 </HeaderSubheader>
                             </Header>
                             <Container>
-
-                                <CardGroup itemsPerRow={3}>
+                                <CardGroup itemsPerRow={mobileItems}>
                                     <Card>
                                         <CardContent>
                                             <Image
