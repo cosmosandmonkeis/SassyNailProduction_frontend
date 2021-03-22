@@ -33,7 +33,6 @@ function CreateAppointmentModal({props}) {
             props.history.push('/success')
         },
         onError(err) {
-            // console.log(err.graphQLErrors)
             setErrors(err.graphQLErrors[0].extensions.exception.errors)
         },
         variables: {
@@ -81,6 +80,7 @@ function CreateAppointmentModal({props}) {
                         content="Create Appointment Booking!"/>
                 </Form>
                 <DisplayErrorGroup errors={errors}/>
+
             </Modal.Content>
             <Modal.Actions>
                 <Button color='black' onClick={() => setOpen(false)}>
