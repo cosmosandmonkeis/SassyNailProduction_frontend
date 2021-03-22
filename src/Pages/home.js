@@ -26,7 +26,6 @@ function Home(props) {
                             subtext='Walk in or Make an appointment'
             />
             <Container>
-                {/*<h1>Home Page</h1>*/}
                 <Grid>
                     <GridRow>
                         <GridColumn width={10}>
@@ -114,7 +113,7 @@ function Home(props) {
                 <GridRow>
                     <Grid.Column width={16}>
                         <Segment placeholder>
-                            <Header size='huge' textAlign='centered'>
+                            <Header size='huge' textAlign='center'>
                                 Services We Provide
                                 <HeaderSubheader>
                                     We provide excellent services as well as build intimate relationships with our
