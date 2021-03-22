@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import {AuthContext} from "../context/auth";
 import Banner from "../Components/Banner";
 import AuthAppointment from "../Components/AuthAppointment";
-import {Header} from "semantic-ui-react";
+import {Header, Icon, Segment} from "semantic-ui-react";
 
 
 function Appointment(props) {
@@ -12,9 +12,12 @@ function Appointment(props) {
         <div>
             <Banner bigheader='View or Make Appointments!' subtext='Appointments need to be confirmed'/>
             {user ? <AuthAppointment props={props}/> :
-                <div className='form-container'>
-                    <Header size='huge'>Login first!</Header>
-                </div>
+                <Segment placeholder>
+                    <Header icon>
+                        <Icon name='bullhorn' />
+                        Login First to Make or View Appointments!
+                    </Header>
+                </Segment>
             }
         </div>
     )
