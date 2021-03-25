@@ -1,15 +1,7 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import {Card, CardContent, Dimmer, Header, HeaderSubheader, Icon, Loader, Segment} from 'semantic-ui-react'
-import {useQuery} from "@apollo/client";
-import gql from "graphql-tag";
-import {AuthContext} from "../context/auth";
 
-function AppointmentCardGroup() {
-
-    const {user} = useContext(AuthContext)
-
-    const {loading_bookings, data: {getUserBookingsHistory: bookings} = {}} =
-        useQuery(FETCH_USER_APP_BOOKINGS, {variables: {username: user ? user.username : null}})
+function AppointmentCardGroup({loading_bookings, bookings}) {
 
     return (bookings && bookings.length === 0) ? (
         <Segment color='red'>
@@ -52,17 +44,6 @@ function AppointmentCardGroup() {
     )
 }
 
-const FETCH_USER_APP_BOOKINGS =
-gql`
-    query getUserBookingsHistory($username: String!)
-    {
-        getUserBookingsHistory(username: $username)
-        {
-            createdAt
-            confirmed
-            serviceType
-        }
-    }
-`
+
 
 export default AppointmentCardGroup
