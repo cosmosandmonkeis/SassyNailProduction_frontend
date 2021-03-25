@@ -2,6 +2,7 @@ import React from 'react'
 import gql from "graphql-tag";
 import {useQuery} from "@apollo/client";
 import AppointmentCardGroup from "../Components/AppointmentCardGroup";
+import {Header} from "semantic-ui-react";
 
 
 function Profile() {
@@ -11,11 +12,12 @@ function Profile() {
 
     return (
         <div className='form-container'>
-            <h1>
+            <Header as='h1'>
                 Profile Page
-            </h1>
-            <AppointmentCardGroup loading_bookings={loading}
-                                  bookings={services} />
+            </Header>
+            <AppointmentCardGroup
+                loading_bookings={loading} bookings={services}
+            />
         </div>
     )
 }
