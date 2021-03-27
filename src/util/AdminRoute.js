@@ -42,7 +42,7 @@ const FIND_USER_INFO = gql`
             email
             phonenumber
             bookingsHistory {
-                confirmed
+                status
                 createdAt
                 serviceType
             }

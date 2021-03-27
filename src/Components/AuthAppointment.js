@@ -35,7 +35,7 @@ gql`
         getUserBookingsHistory(username: $username)
         {
             createdAt
-            confirmed
+            status
             serviceType
         }
     }

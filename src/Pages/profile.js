@@ -28,7 +28,7 @@ gql`
         getUnconfirmedBookings {
             createdAt
             serviceType
-            confirmed
+            status
         }
     }
 `

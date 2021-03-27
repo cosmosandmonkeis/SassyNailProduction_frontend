@@ -14,6 +14,9 @@ function AppointmentCardGroup({loading_bookings, bookings}) {
                 <HeaderSubheader>
                     Click the button above to book your first appointment!
                 </HeaderSubheader>
+
+
+
             </Header>
         </Segment>
     ) : (
@@ -31,7 +34,7 @@ function AppointmentCardGroup({loading_bookings, bookings}) {
                                     {moment_timezone.tz(booking.createdAt, 'America/Los_Angeles').format("LLL") }
                                 </Card.Header>
                                 <Card.Meta>
-                                    {booking.confirmed.toString()}
+                                    {booking.status}
                                 </Card.Meta>
                                 <Card.Description>
                                     {booking.serviceType}
