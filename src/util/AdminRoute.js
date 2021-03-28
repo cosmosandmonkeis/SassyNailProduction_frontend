@@ -10,7 +10,7 @@ function AdminRoute({component: Component, ...rest}) {
 
     const {loading, data: {getAUser: userData} = {}} =
         useQuery(FIND_USER_INFO, {
-            variables: user ? {username: user.username} : {}
+            variables: user ? {username: user.username} : {username: ''}
         })
 
     return (

@@ -14,9 +14,6 @@ function AppointmentCardGroup({loading_bookings, bookings}) {
                 <HeaderSubheader>
                     Click the button above to book your first appointment!
                 </HeaderSubheader>
-
-
-
             </Header>
         </Segment>
     ) : (
