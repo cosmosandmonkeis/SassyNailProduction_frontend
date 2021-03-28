@@ -17,7 +17,7 @@ function AppointmentCardGroup({loading_bookings, bookings}) {
             </Header>
         </Segment>
     ) : (
-        <Card.Group>
+        <Card.Group centered>
             {
                 loading_bookings ? (
                     <Dimmer active>

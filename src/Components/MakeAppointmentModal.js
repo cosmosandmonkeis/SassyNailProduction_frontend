@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Button, Form, Modal, Grid} from "semantic-ui-react";
+import {Button, Form, Modal} from "semantic-ui-react";
 import {useMutation} from "@apollo/client";
 import gql from "graphql-tag";
 import {DateTimeInput} from "semantic-ui-calendar-react";
@@ -50,9 +50,7 @@ function CreateAppointmentModal({props}) {
                    setOpen(true)
                }}
                trigger={
-                   <Grid centered>
-                       <Button primary>Let's make an appointment!</Button>
-                   </Grid>
+                       <Button primary fluid>Let's make an appointment!</Button>
                }>
             <Modal.Header>Make an appointment!</Modal.Header>
             <Modal.Content>
@@ -104,7 +102,7 @@ const MAKE_APP_BOOKING = gql`
         {
             id
             createdAt
-            confirmed
+            status
             serviceType
         }
     }
