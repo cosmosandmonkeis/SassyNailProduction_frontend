@@ -17,6 +17,7 @@ import Footer from "./Components/Footer";
 import {MobileViewProvider} from "./context/mobile";
 import AdminRoute from "./util/AdminRoute";
 import Profile from "./Pages/profile";
+import AdminOnlyViewAllBookings from "./Pages/adminOnlyViewAllBookings";
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
                     <AuthRoute exact path='/register' component={Register}/>
                     <ProtectRoute exact path='/success' component={Success}/>
                     <AdminRoute exact path='/profile' component={Profile}/>
+                    <AdminRoute exact path='/view_all' component={AdminOnlyViewAllBookings}/>
                     <Footer/>
                 </Router>
             </AuthProvider>
