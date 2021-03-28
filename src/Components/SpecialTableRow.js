@@ -17,13 +17,11 @@ function SpecialTableRow({ id, createdAt, status, serviceType}) {
     })
 
     const handleApprove = async () => {
-        // event.preventDefault()
         await setNewStatus('confirmed')
         callUpdate()
     }
 
     const handleDecline = async () => {
-        // event.preventDefault()
         await setNewStatus('denied')
         callUpdate()
     }
