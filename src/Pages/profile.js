@@ -1,11 +1,11 @@
 import React from 'react'
 import gql from "graphql-tag";
 import {useQuery} from "@apollo/client";
-import AppointmentCardGroup from "../Components/AppointmentCardGroup";
 import {Header} from "semantic-ui-react";
+import AuthAppointmentCardGroup from "../Components/AuthAppointmentCardGroup";
 
 
-function Profile() {
+function Profile(props) {
 
     const {loading, data: {getUnconfirmedBookings: services} = {}} =
         useQuery(FETCH_UNCONFIRMED_BOOKINGS)
@@ -15,8 +15,8 @@ function Profile() {
             <Header as='h1'>
                 Profile Page
             </Header>
-            <AppointmentCardGroup
-                loading_bookings={loading} bookings={services}
+            <AuthAppointmentCardGroup
+                loading_bookings={loading} bookings={services} props={props}
             />
         </div>
     )
@@ -26,6 +26,7 @@ const FETCH_UNCONFIRMED_BOOKINGS =
 gql`
     query {
         getUnconfirmedBookings {
+            id
             createdAt
             serviceType
             status
