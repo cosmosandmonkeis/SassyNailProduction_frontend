@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 import {useQuery} from "@apollo/client";
 import {Header} from "semantic-ui-react";
 import AuthAppointmentCardGroup from "../Components/AuthAppointmentCardGroup";
+import AddOrEditService from "../Components/AddOrEditService";
 
 
 function Profile(props) {
@@ -13,7 +14,11 @@ function Profile(props) {
     return (
         <div className='form-container'>
             <Header as='h1'>
-                Profile Page
+                Add a service!
+            </Header>
+            <AddOrEditService/>
+            <Header as='h1'>
+                Confirm or Deny Appointment Bookings!
             </Header>
             <AuthAppointmentCardGroup
                 loading_bookings={loading} bookings={services} props={props}
