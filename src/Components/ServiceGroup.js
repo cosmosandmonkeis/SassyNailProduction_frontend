@@ -63,7 +63,7 @@ function ServiceGroup() {
     )
 }
 
-const FETCH_SERVICES_QUERY =
+export const FETCH_SERVICES_QUERY =
 gql`{
     getServices {
         id

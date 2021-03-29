@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useMutation, useQuery} from "@apollo/client";
 import gql from 'graphql-tag'
 import {Header, Dropdown, Button} from "semantic-ui-react";
+import {FETCH_SERVICES_QUERY} from "./ServiceGroup";
 
 function AdminServiceGroup() {
 
@@ -13,7 +14,6 @@ function AdminServiceGroup() {
     const [deleteService] = useMutation(DELETE_SERVICE,
         {
             update(_) {
-
                 window.location.reload()
             },
             onError(e) {
@@ -72,16 +72,5 @@ const DELETE_SERVICE = gql`
         }
     }
 `
-
-const FETCH_SERVICES_QUERY =
-gql`{
-    getServices {
-        id
-        title
-        price
-        description
-        category
-    }
-}`
 
 export default AdminServiceGroup
