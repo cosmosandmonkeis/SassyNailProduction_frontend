@@ -25,7 +25,9 @@ function AdminServiceGroup() {
         })
 
     const setDeletedItem = (event) => {
-        setItemSelected(event.target.getAttribute('data-index'))
+        event.preventDefault()
+        if(event.target.getAttribute('data-index') !== null)
+            setItemSelected(event.target.getAttribute('data-index'))
     }
 
     return (
@@ -33,7 +35,7 @@ function AdminServiceGroup() {
             <Header>
                 Selected item: {itemSelected}
             </Header>
-            <Dropdown selection fluid text='Select Service to Delete'>
+            <Dropdown inline text='Select Service to Delete'>
                 <Dropdown.Menu>
                     {
                         services && services.map(service => (
