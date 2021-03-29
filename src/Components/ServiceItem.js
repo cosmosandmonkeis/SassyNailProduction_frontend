@@ -1,20 +1,21 @@
 import React from 'react'
-import {Item} from "semantic-ui-react";
+import {Card} from "semantic-ui-react";
 
 function ServiceItem(props) {
     const {title, price, description} = props.service
+    /*<Item.Image size='small' src='https://react.semantic-ui.com/images//image.png' />*/
+
     return (
-        <Item>
-            <Item.Image size='small' src='https://react.semantic-ui.com/images/wireframe/image.png' />
-            <Item.Content>
-                <Item.Header as='a'>{ title }</Item.Header>
-                <Item.Meta> Description </Item.Meta>
-                <Item.Description> { description } </Item.Description>
-                <Item.Meta> Price </Item.Meta>
-                <Item.Description> Starting ${ price } </Item.Description>
-            </Item.Content>
-        </Item>
-    )
+    <Card>
+        <Card.Content>
+            <Card.Header as='a'>{title}</Card.Header>
+            <Card.Meta> Description </Card.Meta>
+            <Card.Description> {description} </Card.Description>
+            <Card.Meta> Price </Card.Meta>
+            <Card.Description> Starting ${price} </Card.Description>
+        </Card.Content>
+    </Card>
+)
 }
 
 export default ServiceItem

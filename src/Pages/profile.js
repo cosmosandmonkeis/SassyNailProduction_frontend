@@ -3,7 +3,8 @@ import gql from "graphql-tag";
 import {useQuery} from "@apollo/client";
 import {Header} from "semantic-ui-react";
 import AuthAppointmentCardGroup from "../Components/AuthAppointmentCardGroup";
-import AddOrEditService from "../Components/AddOrEditService";
+import AddService from "../Components/AddService";
+import DeleteService from "../Components/DeleteService";
 
 
 function Profile(props) {
@@ -16,7 +17,8 @@ function Profile(props) {
             <Header as='h1'>
                 Add a service!
             </Header>
-            <AddOrEditService/>
+            <AddService/>
+            <DeleteService/>
             <Header as='h1'>
                 Confirm or Deny Appointment Bookings!
             </Header>

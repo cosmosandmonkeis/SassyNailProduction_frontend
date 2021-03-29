@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 import gql from "graphql-tag";
 import {useMutation} from "@apollo/client";
-import {Button, Dropdown, Form, Grid, Modal} from "semantic-ui-react";
+import {Button, Dropdown, Form, Modal} from "semantic-ui-react";
 import {useForm} from "../util/hooks";
 
 
-function AddOrEditService() {
+function AddService() {
 
     const initialState = {
         title: '',
@@ -52,12 +52,10 @@ function AddOrEditService() {
     })
 
     const handleCategory = async (event) => {
-        // console.log(event.target.innerText)
         await setCategory(event.target.innerText)
     }
 
     function addServiceCallback() {
-        console.log(values)
         addService()
     }
 
@@ -68,9 +66,7 @@ function AddOrEditService() {
                    setOpen(true)
                }}
                trigger={
-                   <Grid centered>
-                       <Button primary>Let's Add a Service!</Button>
-                   </Grid>
+                   <Button primary>Let's Add a Service!</Button>
                }>
             <Modal.Header>Admin Add Service!</Modal.Header>
             <Modal.Content>
@@ -97,7 +93,7 @@ function AddOrEditService() {
                         onChange={onChange}
                     />
                     <Dropdown
-                        placeholder='Select Friend'
+                        placeholder='Select a category'
                         fluid
                         selection
                         clearable
@@ -148,4 +144,4 @@ gql`
 `
 
 
-export default AddOrEditService
+export default AddService
