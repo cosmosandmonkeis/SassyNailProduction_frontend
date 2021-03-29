@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useQuery} from "@apollo/client";
 import gql from 'graphql-tag'
-import {Item, Menu, Loader, Dimmer} from "semantic-ui-react";
+import { Menu, Loader, Dimmer, Card} from "semantic-ui-react";
 
 import ServiceItem from "../Components/ServiceItem";
 
@@ -42,7 +42,7 @@ function ServiceGroup() {
                     />
                 </Menu>
             </div>
-            <Item.Group>
+            <Card.Group>
                 {
                     loading ? (
                         <Dimmer active>
@@ -58,7 +58,7 @@ function ServiceGroup() {
                         ))
                     )
                 }
-            </Item.Group>
+            </Card.Group>
         </div>
     )
 }
