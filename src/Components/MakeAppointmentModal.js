@@ -50,14 +50,14 @@ function CreateAppointmentModal({props}) {
                    setOpen(true)
                }}
                trigger={
-                       <Button primary fluid>Let's make an appointment!</Button>
+                   <Button primary fluid>Let's make an appointment!</Button>
                }>
             <Modal.Header>Make an appointment!</Modal.Header>
             <Modal.Content>
                 <Form onSubmit={onSubmit} className={loading_create ? 'loading' : ''}>
                     <Form.Input
                         label='description'
-                        placeholder='description...'
+                        placeholder='Add your name followed by services you would like. Add any additional notes if necessary.'
                         name='description'
                         value={descriptionVal}
                         error={!!errors.description}
@@ -78,7 +78,6 @@ function CreateAppointmentModal({props}) {
                         content="Create Appointment Booking!"/>
                 </Form>
                 <DisplayErrorGroup errors={errors}/>
-
             </Modal.Content>
             <Modal.Actions>
                 <Button color='black' onClick={() => setOpen(false)}>
