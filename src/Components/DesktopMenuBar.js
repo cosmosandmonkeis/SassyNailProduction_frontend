@@ -17,13 +17,33 @@ function DesktopMenuBar() {
     return (user) ? (
         (
             <Menu size='massive' color='teal'>
-                <Menu.Item
-                    name={user.username}
-                    active={activeItem === 'user.username'}
-                    onClick={handleItemClick}
-                    as={Link}
-                    to='/'
-                />
+                {
+                    user.admin === true ?
+                        <div>
+                            <Menu.Item
+                                name='DASHBOARD'
+                                active={activeItem === 'DASHBOARD'}
+                                onClick={handleItemClick}
+                                as={Link}
+                                to='/profile'
+                            />
+                            <Menu.Item
+                                name='VIEW_APPOINTMENTS'
+                                active={activeItem === 'VIEW_APPOINTMENTS'}
+                                onClick={handleItemClick}
+                                as={Link}
+                                to='/view_all'
+                            />
+                        </div>
+                        :
+                        <Menu.Item
+                            name={user.username}
+                            active={activeItem === 'user.username'}
+                            onClick={handleItemClick}
+                            as={Link}
+                            to='/'
+                        />
+                }
                 <Menu.Item
                     name='services'
                     active={activeItem === 'services'}
