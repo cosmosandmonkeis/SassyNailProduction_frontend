@@ -47,6 +47,7 @@ function AuthAppointmentCardGroup({loading_bookings, bookings, props}) {
                             <Table.HeaderCell>Service Appointment Description</Table.HeaderCell>
                             <Table.HeaderCell>Approve</Table.HeaderCell>
                             <Table.HeaderCell>Deny</Table.HeaderCell>
+                            <Table.HeaderCell>Message</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
                     <Table.Body>
@@ -59,6 +60,7 @@ function AuthAppointmentCardGroup({loading_bookings, bookings, props}) {
                                         createdAt={booking.createdAt}
                                         status={booking.status}
                                         serviceType={booking.serviceType}
+                                        adminMessage={booking.adminMessage}
                                         props={props}
                                     />
                                 )

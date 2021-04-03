@@ -37,6 +37,7 @@ gql`
             createdAt
             serviceType
             status
+            adminMessage
         }
     }
 `

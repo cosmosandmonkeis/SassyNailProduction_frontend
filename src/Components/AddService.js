@@ -36,8 +36,7 @@ function AddService() {
     const [open, setOpen] = useState(false)
 
     const [addService, {loading}] = useMutation(ADD_SERVICE, {
-        update(_, data) {
-            console.log(data)
+        update(_, ) {
             window.location.reload()
         },
         onError(e) {
