@@ -1,5 +1,6 @@
 import React from 'react'
 import {Card, CardContent, Dimmer, Header, HeaderSubheader, Icon, Loader, Segment} from 'semantic-ui-react'
+
 const moment_timezone = require('moment-timezone');
 
 function AppointmentCardGroup({loading_bookings, bookings}) {
@@ -8,7 +9,7 @@ function AppointmentCardGroup({loading_bookings, bookings}) {
         <Segment color='red'>
             <Header icon textAlign='center'>
                 <Icon name='bullhorn'/>
-                <Header.Content >
+                <Header.Content>
                     No previous appointments made!
                 </Header.Content>
                 <HeaderSubheader>
@@ -28,11 +29,32 @@ function AppointmentCardGroup({loading_bookings, bookings}) {
                         <Card key={index}>
                             <CardContent>
                                 <Card.Header>
-                                    {moment_timezone.tz(booking.createdAt, 'America/Los_Angeles').format("LLL") }
+                                    {moment_timezone.tz(booking.createdAt, 'America/Los_Angeles').format("LLL")}
                                 </Card.Header>
-                                <Card.Meta>
-                                    {booking.status}
-                                </Card.Meta>
+                                {
+                                    booking.status === 'unconfirmed' ?
+                                        <Card.Meta>
+                                            <Header as='h4' color='grey'>
+                                                {booking.status}
+                                            </Header>
+                                        </Card.Meta>
+                                        :
+                                        (
+                                            booking.status === 'denied' ?
+                                                <Card.Meta>
+                                                    <Header as='h4' color='red'>
+                                                        {booking.status}
+                                                    </Header>
+                                                </Card.Meta>
+                                                :
+                                                <Card.Meta>
+                                                    <Header as='h4' color='green'>
+                                                        {booking.status}
+                                                    </Header>
+                                                </Card.Meta>
+                                        )
+                                }
+
                                 <Card.Description>
                                     {booking.serviceType}
                                 </Card.Description>
@@ -44,7 +66,6 @@ function AppointmentCardGroup({loading_bookings, bookings}) {
         </Card.Group>
     )
 }
-
 
 
 export default AppointmentCardGroup

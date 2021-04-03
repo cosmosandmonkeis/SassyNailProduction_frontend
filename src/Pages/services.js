@@ -6,7 +6,7 @@ function Services() {
 
     return (
         <div>
-            <Banner bigheader='View our services!' subtext='Prices and Services subject to change'/>
+            <Banner bigheader='View our services!' subtext='Prices and Services Subject to Change'/>
             <ServiceGroup/>
         </div>
 

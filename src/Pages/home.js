@@ -1,7 +1,12 @@
 import React from 'react'
 import HomePageBanner from "../Components/HomePageBanner";
 import {
-    Button, Card, CardContent, CardDescription, CardGroup, CardHeader,
+    Button,
+    Card,
+    CardContent,
+    CardDescription,
+    CardGroup,
+    CardHeader,
     Container,
     Grid,
     GridColumn,
@@ -29,6 +34,31 @@ function Home(props) {
                             big_header_text='Sassy Nails Spa'
                             subtext='Walk in or Make an appointment'
             />
+            <Container>
+                <Grid>
+                    <GridRow>
+                        <GridColumn width={10}>
+                            <Header>
+                                OPTIMIZE YOUR SPA EXPERIENCE
+                                <Header size='huge'>
+                                    Use our new online booking system to cut wait
+                                    times and view our services
+                                    <HeaderSubheader>
+                                        We are here to make your spa experience the best it can be.
+                                    </HeaderSubheader>
+                                </Header>
+                                <Button animated='fade' onClick={changeRoute} primary>
+                                    <Button.Content visible>Make an Appointment Now!</Button.Content>
+                                    <Button.Content hidden><Icon name='right arrow'/></Button.Content>
+                                </Button>
+                            </Header>
+                        </GridColumn>
+                        <GridColumn width={6}>
+                            <Image src='https://sassynailsoakland.com/static/images/opi-nail-lacquer.jpg'/>
+                        </GridColumn>
+                    </GridRow>
+                </Grid>
+            </Container>
             <Grid>
                 <GridRow>
                     <Grid.Column width={16}>

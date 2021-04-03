@@ -11,13 +11,14 @@ function Appointment(props) {
     return (
         <div>
             <Banner bigheader='View or Make Appointments!' subtext='Appointments need to be confirmed'/>
-            {user ? <AuthAppointment props={props}/> :
-                <Segment placeholder>
-                    <Header icon>
-                        <Icon name='bullhorn' />
-                        Login First to Make or View Appointments!
-                    </Header>
-                </Segment>
+            {
+                user ? <AuthAppointment props={props}/> :
+                    <Segment placeholder>
+                        <Header icon>
+                            <Icon name='bullhorn'/>
+                            Login first to Make or View Appointments!
+                        </Header>
+                    </Segment>
             }
         </div>
     )
