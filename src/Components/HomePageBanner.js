@@ -16,7 +16,7 @@ function HomePageBanner({props, big_header_text, subtext}) {
                         {subtext}
                     </Header.Subheader>
                 </Header>
-                <Button animated='fade' onClick={changeRoute}>
+                <Button primary animated='fade' onClick={changeRoute}>
                     <Button.Content visible>Checkout our services</Button.Content>
                     <Button.Content hidden><Icon name='right arrow'/></Button.Content>
                 </Button>
