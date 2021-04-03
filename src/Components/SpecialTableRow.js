@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import gql from "graphql-tag";
-import {Button, Dropdown, Table} from "semantic-ui-react";
+import {Button, Dropdown, Header, Table, TableCell} from "semantic-ui-react";
 import {useMutation} from "@apollo/client";
 
 const moment_timezone = require('moment-timezone');
@@ -67,9 +67,29 @@ function SpecialTableRow({id, createdAt, status, serviceType, adminMessage}) {
             <Table.Cell>
                 {moment_timezone.tz(createdAt, 'America/Los_Angeles').format("LLL")}
             </Table.Cell>
-            <Table.Cell>
-                {newStatus}
-            </Table.Cell>
+            {
+                newStatus === 'unconfirmed' ?
+                    <TableCell>
+                        <Header as='h4' color='grey'>
+                            {newStatus}
+                        </Header>
+                    </TableCell>
+                    :
+                    (
+                        newStatus === 'denied' ?
+                            <TableCell>
+                                <Header as='h4' color='red'>
+                                    {newStatus}
+                                </Header>
+                            </TableCell>
+                            :
+                            <TableCell>
+                                <Header as='h4' color='green'>
+                                    {newStatus}
+                                </Header>
+                            </TableCell>
+                    )
+            }
             <Table.Cell>
                 {serviceType}
             </Table.Cell>
