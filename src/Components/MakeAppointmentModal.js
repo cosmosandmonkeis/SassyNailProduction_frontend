@@ -6,7 +6,7 @@ import {DateTimeInput} from "semantic-ui-calendar-react";
 import moment from 'moment'
 import DisplayErrorGroup from "./DisplayErrorGroup";
 
-function CreateAppointmentModal({props}) {
+function CreateAppointmentModal() {
 
     const [open, setOpen] = useState(false)
     const [errors, setErrors] = useState({})
@@ -29,7 +29,7 @@ function CreateAppointmentModal({props}) {
 
     const [sendAppointMutation, {loading_create}] = useMutation(MAKE_APP_BOOKING, {
         update(_) {
-            props.history.push('/success')
+            window.location.reload(true)
         },
         onError(err) {
             setErrors(err.graphQLErrors[0].extensions.exception.errors)
