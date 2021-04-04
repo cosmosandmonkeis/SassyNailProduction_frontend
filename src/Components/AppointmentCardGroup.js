@@ -1,7 +1,6 @@
 import React from 'react'
 import {Card, CardContent, Dimmer, Header, HeaderSubheader, Icon, Loader, Segment} from 'semantic-ui-react'
 
-const moment_timezone = require('moment-timezone');
 
 function AppointmentCardGroup({loading_bookings, bookings}) {
 
@@ -29,7 +28,7 @@ function AppointmentCardGroup({loading_bookings, bookings}) {
                         <Card key={index}>
                             <CardContent>
                                 <Card.Header>
-                                    {moment_timezone.tz(booking.createdAt, 'America/Los_Angeles').format("LLL")}
+                                    {booking.createdAt}
                                 </Card.Header>
                                 {
                                     booking.status === 'unconfirmed' ?

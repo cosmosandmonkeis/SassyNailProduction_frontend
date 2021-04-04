@@ -19,8 +19,7 @@ function CreateAppointmentModal({props}) {
     }
 
     const handleDateChange = (_, value) => {
-        const iso_val = moment().toISOString(value)
-        setDate(iso_val)
+        setDate(value)
     }
 
     const onSubmit = event => {
@@ -65,6 +64,8 @@ function CreateAppointmentModal({props}) {
                     />
                     <DateTimeInput
                         name="date"
+                        dateTimeFormat="LLLL"
+                        timeFormat="AMPM"
                         value={date}
                         minDate={moment()}
                         maxDate={moment().add(1, 'month')}

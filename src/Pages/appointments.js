@@ -26,7 +26,6 @@ function Appointment(props) {
                             </Header>
                         </Segment>
                     </div>
-
             }
         </div>
     )

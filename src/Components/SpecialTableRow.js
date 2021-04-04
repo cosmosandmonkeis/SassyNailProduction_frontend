@@ -3,7 +3,6 @@ import gql from "graphql-tag";
 import {Button, Dropdown, Header, Table, TableCell} from "semantic-ui-react";
 import {useMutation} from "@apollo/client";
 
-const moment_timezone = require('moment-timezone');
 
 
 function SpecialTableRow({id, createdAt, status, serviceType, adminMessage}) {
@@ -21,8 +20,8 @@ function SpecialTableRow({id, createdAt, status, serviceType, adminMessage}) {
         },
         {
             key: 'Denied! (Other)',
-            text: 'Appointment able to be scheduled, call 510-596-8802 for further information',
-            value: 'Appointment able to be scheduled, call 510-596-8802 for further information',
+            text: 'Appointment not able to be scheduled, call 510-596-8802 for further information',
+            value: 'Appointment  not able to be scheduled, call 510-596-8802 for further information',
         },
     ]
 
@@ -65,7 +64,7 @@ function SpecialTableRow({id, createdAt, status, serviceType, adminMessage}) {
                 {id}
             </Table.Cell>
             <Table.Cell>
-                {moment_timezone.tz(createdAt, 'America/Los_Angeles').format("LLL")}
+                {createdAt}
             </Table.Cell>
             {
                 newStatus === 'unconfirmed' ?

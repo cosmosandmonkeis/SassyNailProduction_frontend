@@ -42,7 +42,7 @@ function ServiceGroup() {
                     />
                 </Menu>
             </div>
-            <Card.Group>
+            <Card.Group centered>
                 {
                     loading ? (
                         <Dimmer active>
