@@ -7,7 +7,7 @@ import {ApolloClient, ApolloProvider, createHttpLink, InMemoryCache} from "@apol
 import {setContext} from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-    uri: "https://vttsiaglvj.execute-api.us-east-1.amazonaws.com/dev/"
+    uri: "https://vttsiaglvj.execute-api.us-east-1.amazonaws.com/dev/graohql/"
 })
 
 const authLink = setContext(() => {
