@@ -7,7 +7,7 @@ import {ApolloClient, ApolloProvider, createHttpLink, InMemoryCache} from "@apol
 import {setContext} from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-    uri: "https://vttsiaglvj.execute-api.us-east-1.amazonaws.com/dev/graphql/",
+    uri: "https://sns-gql-backend.herokuapp.com/",
     credentials: 'same-origin'
 })
 
