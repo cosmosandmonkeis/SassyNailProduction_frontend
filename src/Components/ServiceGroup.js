@@ -64,14 +64,16 @@ function ServiceGroup() {
 }
 
 export const FETCH_SERVICES_QUERY =
-gql`
-    query getServices
+gql`{
+    getServices
     {
         id
         title
         price
         description
         category
-    }`
+    }
+}
+`
 
 export default ServiceGroup
