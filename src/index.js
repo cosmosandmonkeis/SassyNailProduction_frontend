@@ -7,8 +7,7 @@ import {ApolloClient, ApolloProvider, createHttpLink, InMemoryCache} from "@apol
 import {setContext} from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-    uri: "https://sns-gql-backend.herokuapp.com/",
-    credentials: 'same-origin'
+    uri: "https://sns-gql-backend.herokuapp.com/"
 })
 
 const authLink = setContext(() => {

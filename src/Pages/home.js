@@ -54,7 +54,7 @@ function Home(props) {
                             </Header>
                         </GridColumn>
                         <GridColumn width={6}>
-                            <Image src='https://sassynailsoakland.com/static/images/opi-nail-lacquer.jpg'/>
+                            <Image src='https://react.semantic-ui.com/images//image.png'/>
                         </GridColumn>
                     </GridRow>
                 </Grid>

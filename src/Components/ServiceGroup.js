@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useQuery} from "@apollo/client";
 import gql from 'graphql-tag'
-import { Menu, Loader, Dimmer, Card} from "semantic-ui-react";
+import {Card, Dimmer, Loader, Menu} from "semantic-ui-react";
 
 import ServiceItem from "../Components/ServiceItem";
 
@@ -64,14 +64,14 @@ function ServiceGroup() {
 }
 
 export const FETCH_SERVICES_QUERY =
-gql`{
-    getServices {
+gql`
+    query getServices
+    {
         id
         title
         price
         description
         category
-    }
-}`
+    }`
 
 export default ServiceGroup
