@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Frontend portion of Sassy Nails Spa
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The react frontend for sassynailsoakland.com; currently connected with URL: https://gracious-pare-c9e199.netlify.app/. 
 
 ## Available Scripts
 
