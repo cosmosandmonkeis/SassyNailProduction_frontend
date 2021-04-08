@@ -1,6 +1,6 @@
 import React from "react";
 
-function DisplayErrorGroup({errors}){
+function DisplayErrorGroup({errors}) {
     return (
         Object.keys(errors).length > 0 && (
             <div className='ui error message'>

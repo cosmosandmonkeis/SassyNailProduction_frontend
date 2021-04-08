@@ -1,14 +1,14 @@
 import React, {useState} from 'react'
 import {useMutation, useQuery} from "@apollo/client";
 import gql from 'graphql-tag'
-import {Header, Dropdown, Button} from "semantic-ui-react";
+import {Button, Dropdown, Header} from "semantic-ui-react";
 import {FETCH_SERVICES_QUERY} from "./ServiceGroup";
 
 function AdminServiceGroup() {
 
     const [itemSelected, setItemSelected] = useState('')
 
-    const { data: {getServices: services} = {}} =
+    const {data: {getServices: services} = {}} =
         useQuery(FETCH_SERVICES_QUERY)
 
     const [deleteService] = useMutation(DELETE_SERVICE,
@@ -26,7 +26,7 @@ function AdminServiceGroup() {
 
     const setDeletedItem = (event) => {
         event.preventDefault()
-        if(event.target.getAttribute('data-index') !== null)
+        if (event.target.getAttribute('data-index') !== null)
             setItemSelected(event.target.getAttribute('data-index'))
     }
 

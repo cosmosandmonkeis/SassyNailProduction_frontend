@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import gql from "graphql-tag";
-import {Button, Dropdown, Header, Table, TableCell} from "semantic-ui-react";
+import {Button, Dropdown, Header, TableCell, TableRow} from "semantic-ui-react";
 import {useMutation} from "@apollo/client";
-
 
 
 function SpecialTableRow({id, createdAt, status, serviceType, adminMessage}) {
@@ -59,13 +58,13 @@ function SpecialTableRow({id, createdAt, status, serviceType, adminMessage}) {
     }
 
     return (
-        <Table.Row>
-            <Table.Cell>
+        <TableRow>
+            <TableCell>
                 {id}
-            </Table.Cell>
-            <Table.Cell>
+            </TableCell>
+            <TableCell>
                 {createdAt}
-            </Table.Cell>
+            </TableCell>
             {
                 newStatus === 'unconfirmed' ?
                     <TableCell>
@@ -89,10 +88,10 @@ function SpecialTableRow({id, createdAt, status, serviceType, adminMessage}) {
                             </TableCell>
                     )
             }
-            <Table.Cell>
+            <TableCell>
                 {serviceType}
-            </Table.Cell>
-            <Table.Cell>
+            </TableCell>
+            <TableCell>
                 <Dropdown
                     placeholder='Select a category'
                     fluid
@@ -100,14 +99,14 @@ function SpecialTableRow({id, createdAt, status, serviceType, adminMessage}) {
                     clearable
                     onChange={handleCategory}
                     options={messageOptions}/>
-            </Table.Cell>
-            <Table.Cell>
+            </TableCell>
+            <TableCell>
                 <Button content='Approve' onClick={handleApprove} positive/>
-            </Table.Cell>
-            <Table.Cell>
+            </TableCell>
+            <TableCell>
                 <Button content='Deny' onClick={handleDecline} negative/>
-            </Table.Cell>
-        </Table.Row>
+            </TableCell>
+        </TableRow>
     )
 }
 

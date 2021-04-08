@@ -1,5 +1,5 @@
-import React, {useState, useContext} from 'react'
-import {Form, Button} from 'semantic-ui-react'
+import React, {useContext, useState} from 'react'
+import {Button, Form, FormInput} from 'semantic-ui-react'
 import gql from 'graphql-tag'
 import {useMutation} from "@apollo/client";
 import {useForm} from "../util/hooks";
@@ -53,7 +53,7 @@ function Login(props) {
             <Banner bigheader='Login to Make Appointments!' subtext=''/>
             <div className='form-container'>
                 <Form onSubmit={onSubmit} noValidate className={loading ? 'loading' : ''}>
-                    <Form.Input
+                    <FormInput
                         label='Username'
                         placeholder='Username...'
                         name='username'
@@ -61,7 +61,7 @@ function Login(props) {
                         error={!!errors.username}
                         onChange={onChange}
                     />
-                    <Form.Input
+                    <FormInput
                         label='Password'
                         placeholder='Password...'
                         name='password'

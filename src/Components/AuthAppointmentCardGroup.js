@@ -1,12 +1,16 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {
     Dimmer,
     Header,
+    HeaderContent,
     HeaderSubheader,
     Icon,
     Loader,
     Segment,
-    Table
+    Table,
+    TableHeader,
+    TableHeaderCell,
+    TableRow
 } from 'semantic-ui-react'
 import SpecialTableRow from "./SpecialTableRow";
 
@@ -23,9 +27,9 @@ function AuthAppointmentCardGroup({loading_bookings, bookings, props}) {
         <Segment color='red'>
             <Header icon textAlign='center'>
                 <Icon name='bullhorn'/>
-                <Header.Content>
+                <HeaderContent>
                     No appointments to confirm!
-                </Header.Content>
+                </HeaderContent>
                 <HeaderSubheader>
                     Refresh to see more appointments made!
                 </HeaderSubheader>
@@ -39,17 +43,17 @@ function AuthAppointmentCardGroup({loading_bookings, bookings, props}) {
             ) :
             (
                 <Table celled>
-                    <Table.Header>
-                        <Table.Row>
-                            <Table.HeaderCell>Index</Table.HeaderCell>
-                            <Table.HeaderCell>Date Created</Table.HeaderCell>
-                            <Table.HeaderCell>Confirmation Status</Table.HeaderCell>
-                            <Table.HeaderCell>Service Appointment Description</Table.HeaderCell>
-                            <Table.HeaderCell>Approve</Table.HeaderCell>
-                            <Table.HeaderCell>Deny</Table.HeaderCell>
-                            <Table.HeaderCell>Message</Table.HeaderCell>
-                        </Table.Row>
-                    </Table.Header>
+                    <TableHeader>
+                        <TableRow>
+                            <TableHeaderCell>Index</TableHeaderCell>
+                            <TableHeaderCell>Date Created</TableHeaderCell>
+                            <TableHeaderCell>Confirmation Status</TableHeaderCell>
+                            <TableHeaderCell>Service Appointment Description</TableHeaderCell>
+                            <TableHeaderCell>Approve</TableHeaderCell>
+                            <TableHeaderCell>Deny</TableHeaderCell>
+                            <TableHeaderCell>Message</TableHeaderCell>
+                        </TableRow>
+                    </TableHeader>
                     <Table.Body>
                         {
                             state_bookings && state_bookings.map(

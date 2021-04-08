@@ -1,11 +1,12 @@
-import React, {useState, useContext} from 'react'
-import {Form, Button} from 'semantic-ui-react'
+import React, {useContext, useState} from 'react'
+import {Button, Form, FormInput} from 'semantic-ui-react'
 import gql from 'graphql-tag'
 import {useMutation} from "@apollo/client";
 
 import {useForm} from "../util/hooks";
 import {AuthContext} from "../context/auth";
 import Banner from "../Components/Banner";
+import DisplayErrorGroup from "../Components/DisplayErrorGroup";
 
 function Register(props) {
     const context = useContext(AuthContext)
@@ -41,7 +42,7 @@ function Register(props) {
             <div className='form-container'>
                 <Form onSubmit={onSubmit} noValidate className={loading ? 'loading' : '-'}>
                     <h1> Register </h1>
-                    <Form.Input
+                    <FormInput
                         label='Username'
                         placeholder='Username...'
                         name='username'
@@ -49,7 +50,7 @@ function Register(props) {
                         error={!!errors.username}
                         onChange={onChange}
                     />
-                    <Form.Input
+                    <FormInput
                         label='Password'
                         placeholder='Password...'
                         name='password'
@@ -58,7 +59,7 @@ function Register(props) {
                         error={!!errors.password}
                         onChange={onChange}
                     />
-                    <Form.Input
+                    <FormInput
                         label='Confirm Password'
                         placeholder='Confirm Password...'
                         name='confirmPassword'
@@ -67,7 +68,7 @@ function Register(props) {
                         error={!!errors.confirmPassword}
                         onChange={onChange}
                     />
-                    <Form.Input
+                    <FormInput
                         label='Email'
                         placeholder='Email...'
                         name='email'
@@ -79,15 +80,7 @@ function Register(props) {
                         Register!
                     </Button>
                 </Form>
-                {Object.keys(errors).length > 0 && (
-                    <div className='ui error message'>
-                        <ul className='list'>
-                            {Object.values(errors).map((value => (
-                                <li key={value}>{value}</li>
-                            )))}
-                        </ul>
-                    </div>
-                )}
+                <DisplayErrorGroup errors={errors}/>
             </div>
         </div>
     )

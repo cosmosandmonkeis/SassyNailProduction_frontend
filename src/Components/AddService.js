@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import gql from "graphql-tag";
 import {useMutation} from "@apollo/client";
-import {Button, Dropdown, Form, Modal} from "semantic-ui-react";
+import {Button, Dropdown, Form, FormInput, Modal, ModalActions, ModalContent, ModalHeader} from "semantic-ui-react";
 import {useForm} from "../util/hooks";
 
 
@@ -36,7 +36,7 @@ function AddService() {
     const [open, setOpen] = useState(false)
 
     const [addService, {loading}] = useMutation(ADD_SERVICE, {
-        update(_, ) {
+        update(_,) {
             window.location.reload()
         },
         onError(e) {
@@ -67,24 +67,24 @@ function AddService() {
                trigger={
                    <Button primary>Let's Add a Service!</Button>
                }>
-            <Modal.Header>Admin Add Service!</Modal.Header>
-            <Modal.Content>
+            <ModalHeader>Admin Add Service!</ModalHeader>
+            <ModalContent>
                 <Form onSubmit={onSubmit} className={loading ? 'loading' : ''}>
-                    <Form.Input
+                    <FormInput
                         label='title'
                         placeholder='title...'
                         name='title'
                         value={values.title}
                         onChange={onChange}
                     />
-                    <Form.Input
+                    <FormInput
                         label='price'
                         placeholder='price...'
                         name='price'
                         value={values.price}
                         onChange={onChange}
                     />
-                    <Form.Input
+                    <FormInput
                         label='description'
                         placeholder='description...'
                         name='description'
@@ -105,12 +105,12 @@ function AddService() {
                         icon='checkmark'
                         content="Add this service!"/>
                 </Form>
-            </Modal.Content>
-            <Modal.Actions>
+            </ModalContent>
+            <ModalActions>
                 <Button color='black' onClick={() => setOpen(false)}>
                     I change my mind!
                 </Button>
-            </Modal.Actions>
+            </ModalActions>
         </Modal>
     )
 }

@@ -1,5 +1,19 @@
 import React from 'react'
-import {Card, CardContent, Dimmer, Header, HeaderSubheader, Icon, Loader, Segment} from 'semantic-ui-react'
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardGroup,
+    CardHeader,
+    CardMeta,
+    Dimmer,
+    Header,
+    HeaderContent,
+    HeaderSubheader,
+    Icon,
+    Loader,
+    Segment
+} from 'semantic-ui-react'
 
 
 function AppointmentCardGroup({loading_bookings, bookings}) {
@@ -8,16 +22,16 @@ function AppointmentCardGroup({loading_bookings, bookings}) {
         <Segment color='red'>
             <Header icon textAlign='center'>
                 <Icon name='bullhorn'/>
-                <Header.Content>
+                <HeaderContent>
                     No previous appointments made!
-                </Header.Content>
+                </HeaderContent>
                 <HeaderSubheader>
                     Click the button above to book your first appointment!
                 </HeaderSubheader>
             </Header>
         </Segment>
     ) : (
-        <Card.Group centered>
+        <CardGroup centered>
             {
                 loading_bookings ? (
                     <Dimmer active>
@@ -27,42 +41,42 @@ function AppointmentCardGroup({loading_bookings, bookings}) {
                     bookings.map((booking, index) => (
                         <Card key={index}>
                             <CardContent>
-                                <Card.Header>
+                                <CardHeader>
                                     {booking.createdAt}
-                                </Card.Header>
+                                </CardHeader>
                                 {
                                     booking.status === 'unconfirmed' ?
-                                        <Card.Meta>
+                                        <CardMeta>
                                             <Header as='h4' color='grey'>
                                                 {booking.status}
                                             </Header>
-                                        </Card.Meta>
+                                        </CardMeta>
                                         :
                                         (
                                             booking.status === 'denied' ?
-                                                <Card.Meta>
+                                                <CardMeta>
                                                     <Header as='h4' color='red'>
                                                         {booking.status}
                                                     </Header>
-                                                </Card.Meta>
+                                                </CardMeta>
                                                 :
-                                                <Card.Meta>
+                                                <CardMeta>
                                                     <Header as='h4' color='green'>
                                                         {booking.status}
                                                     </Header>
-                                                </Card.Meta>
+                                                </CardMeta>
                                         )
                                 }
 
-                                <Card.Description>
+                                <CardDescription>
                                     {booking.serviceType}
-                                </Card.Description>
+                                </CardDescription>
                             </CardContent>
                         </Card>
                     ))
                 )
             }
-        </Card.Group>
+        </CardGroup>
     )
 }
 

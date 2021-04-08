@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import gql from 'graphql-tag'
 import {useQuery} from "@apollo/client";
-import { CardGroup, Dimmer, Loader, Menu} from "semantic-ui-react";
+import {CardGroup, Dimmer, Loader, Menu, MenuItem} from "semantic-ui-react";
 import ServiceItem from "./ServiceItem";
 
 export const FETCH_SERVICES_QUERY =
@@ -44,17 +44,17 @@ function ServiceGroup() {
         <div className="form-container">
             <div className='menu-center'>
                 <Menu secondary pointing compact>
-                    <Menu.Item
+                    <MenuItem
                         name='manicures'
                         active={activeItem === 'manicures'}
                         onClick={handleItemClick}
                     />
-                    <Menu.Item
+                    <MenuItem
                         name='pedicures'
                         active={activeItem === 'pedicures'}
                         onClick={handleItemClick}
                     />
-                    <Menu.Item
+                    <MenuItem
                         name='waxings'
                         active={activeItem === 'waxings'}
                         onClick={handleItemClick}

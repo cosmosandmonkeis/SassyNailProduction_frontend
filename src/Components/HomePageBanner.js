@@ -1,5 +1,5 @@
 import React from 'react'
-import {Header, Button, Icon} from "semantic-ui-react";
+import {Button, Header, Icon} from "semantic-ui-react";
 
 function HomePageBanner({props, big_header_text, subtext}) {
     const changeRoute = () => {

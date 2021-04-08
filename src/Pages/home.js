@@ -61,7 +61,7 @@ function Home(props) {
             </Container>
             <Grid>
                 <GridRow>
-                    <Grid.Column width={16}>
+                    <GridColumn width={16}>
                         <Segment placeholder>
                             <Header size='huge' textAlign='center'>
                                 Services We Provide
@@ -118,7 +118,7 @@ function Home(props) {
                                 </CardGroup>
                             </Container>
                         </Segment>
-                    </Grid.Column>
+                    </GridColumn>
                 </GridRow>
             </Grid>
         </div>

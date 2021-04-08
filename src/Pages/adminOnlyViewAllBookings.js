@@ -25,7 +25,7 @@ function AdminOnlyViewAllBookings() {
 const FETCH_BOOKINGS =
 gql`
     query {
-        getAppointmentBookings 
+        getAppointmentBookings
         {
             id
             createdAt

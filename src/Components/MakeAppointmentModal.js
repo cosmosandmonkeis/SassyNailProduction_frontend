@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Button, Form, Modal} from "semantic-ui-react";
+import {Button, Form, FormInput, Modal, ModalActions, ModalContent, ModalHeader} from "semantic-ui-react";
 import {useMutation} from "@apollo/client";
 import gql from "graphql-tag";
 import {DateTimeInput} from "semantic-ui-calendar-react";
@@ -51,10 +51,10 @@ function CreateAppointmentModal() {
                trigger={
                    <Button primary fluid>Let's make an appointment!</Button>
                }>
-            <Modal.Header>Make an appointment!</Modal.Header>
-            <Modal.Content>
+            <ModalHeader>Make an appointment!</ModalHeader>
+            <ModalContent>
                 <Form onSubmit={onSubmit} className={loading_create ? 'loading' : ''}>
-                    <Form.Input
+                    <FormInput
                         label='description'
                         placeholder='Add your name followed by services you would like. Add any additional notes if necessary.'
                         name='description'
@@ -79,12 +79,12 @@ function CreateAppointmentModal() {
                         content="Create Appointment Booking!"/>
                 </Form>
                 <DisplayErrorGroup errors={errors}/>
-            </Modal.Content>
-            <Modal.Actions>
+            </ModalContent>
+            <ModalActions>
                 <Button color='black' onClick={() => setOpen(false)}>
                     I change my mind!
                 </Button>
-            </Modal.Actions>
+            </ModalActions>
         </Modal>
     )
 }

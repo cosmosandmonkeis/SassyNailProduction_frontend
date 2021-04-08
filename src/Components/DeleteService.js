@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Button, Modal} from "semantic-ui-react";
+import {Button, Modal, ModalActions, ModalContent, ModalHeader} from "semantic-ui-react";
 import AdminServiceGroup from "./AdminServiceGroup";
 
 function DeleteService() {
@@ -14,15 +14,15 @@ function DeleteService() {
                trigger={
                    <Button primary>Let's Delete a Service!</Button>
                }>
-            <Modal.Header>Admin Delete Service!</Modal.Header>
-            <Modal.Content>
+            <ModalHeader>Admin Delete Service!</ModalHeader>
+            <ModalContent>
                 <AdminServiceGroup/>
-            </Modal.Content>
-            <Modal.Actions>
+            </ModalContent>
+            <ModalActions>
                 <Button color='black' onClick={() => setOpen(false)}>
                     I change my mind!
                 </Button>
-            </Modal.Actions>
+            </ModalActions>
         </Modal>
     )
 }

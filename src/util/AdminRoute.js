@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {Route, Redirect} from 'react-router-dom'
+import {Redirect, Route} from 'react-router-dom'
 import {AuthContext} from "../context/auth";
 import gql from "graphql-tag";
 import {useQuery} from "@apollo/client";
