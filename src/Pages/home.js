@@ -54,7 +54,7 @@ function Home(props) {
                             </Header>
                         </GridColumn>
                         <GridColumn width={6}>
-                            <Image src='https://react.semantic-ui.com/images//image.png'/>
+                            <Image src="https://i.ibb.co/HXdzn06/opi-nail-lacquer.png"/>
                         </GridColumn>
                     </GridRow>
                 </Grid>
@@ -74,11 +74,10 @@ function Home(props) {
                             <Container>
                                 <CardGroup itemsPerRow={mobileItems}>
                                     <Card>
+                                        <Image
+                                            src='https://i.ibb.co/6DZZF0Q/lipstick-hand.jpg'
+                                            rounded/>
                                         <CardContent>
-                                            <Image
-                                                src='https://pyxis.nymag.com/v1/imgs/7ba/cbc/5e124a163bf8cfde5dd82a59c45bc633f8-11-brolin-thanos-1.rsquare.w1200.jpg'
-                                                size='medium'
-                                                rounded/>
                                             <CardHeader>
                                                 Manicures
                                             </CardHeader>
@@ -88,11 +87,10 @@ function Home(props) {
                                         </CardContent>
                                     </Card>
                                     <Card>
+                                        <Image
+                                            src='https://i.ibb.co/8c9w71J/vinegar-manicure.jpg'
+                                            rounded/>
                                         <CardContent>
-                                            <Image
-                                                src='https://pyxis.nymag.com/v1/imgs/7ba/cbc/5e124a163bf8cfde5dd82a59c45bc633f8-11-brolin-thanos-1.rsquare.w1200.jpg'
-                                                size='medium'
-                                                rounded/>
                                             <CardHeader>
                                                 Pedicures
                                             </CardHeader>
@@ -102,11 +100,10 @@ function Home(props) {
                                         </CardContent>
                                     </Card>
                                     <Card>
+                                        <Image
+                                            src='https://i.ibb.co/7XyXHNn/waxbrow-fullface.jpg'
+                                            rounded/>
                                         <CardContent>
-                                            <Image
-                                                src='https://pyxis.nymag.com/v1/imgs/7ba/cbc/5e124a163bf8cfde5dd82a59c45bc633f8-11-brolin-thanos-1.rsquare.w1200.jpg'
-                                                size='medium'
-                                                rounded/>
                                             <CardHeader>
                                                 Waxings
                                             </CardHeader>
