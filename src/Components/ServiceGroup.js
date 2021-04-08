@@ -1,9 +1,21 @@
 import React, {useState} from 'react'
-import {useQuery} from "@apollo/client";
 import gql from 'graphql-tag'
-import {Card, Dimmer, Loader, Menu} from "semantic-ui-react";
+import {useQuery} from "@apollo/client";
+import { CardGroup, Dimmer, Loader, Menu} from "semantic-ui-react";
+import ServiceItem from "./ServiceItem";
 
-import ServiceItem from "../Components/ServiceItem";
+export const FETCH_SERVICES_QUERY =
+gql`{
+    getServices
+    {
+        id
+        title
+        price
+        description
+        category
+    }
+}
+`
 
 /*
 * Since we have relatively small amount of services, fetch all services and
@@ -12,7 +24,7 @@ import ServiceItem from "../Components/ServiceItem";
 * */
 function ServiceGroup() {
 
-    const {loading, data: {getServices: services} = {}} =
+    const {loading, data} =
         useQuery(FETCH_SERVICES_QUERY)
 
     const [activeItem, setActiveItem] = useState('manicures')
@@ -21,8 +33,15 @@ function ServiceGroup() {
         setActiveItem(name)
     }
 
+    if (loading)
+        return (
+            <Dimmer active>
+                <Loader/>
+            </Dimmer>
+        )
+
     return (
-        <div className="form-container ">
+        <div className="form-container">
             <div className='menu-center'>
                 <Menu secondary pointing compact>
                     <Menu.Item
@@ -42,38 +61,19 @@ function ServiceGroup() {
                     />
                 </Menu>
             </div>
-            <Card.Group centered>
+            <CardGroup centered>
                 {
-                    loading ? (
-                        <Dimmer active>
-                            <Loader/>
-                        </Dimmer>
-                    ) : (
-                        services &&
-                        services.filter(service => (
-                            service.category === activeItem
-                        )).map(service => (
-                            <ServiceItem className='item-center' service={service} activeItem={activeItem}
-                                         key={service.id}/>
-                        ))
-                    )
+                    data.getServices &&
+                    data.getServices.filter(service => (
+                        service.category === activeItem
+                    )).map(service => (
+                        <ServiceItem className='item-center' service={service} activeItem={activeItem}
+                                     key={service.id}/>
+                    ))
                 }
-            </Card.Group>
+            </CardGroup>
         </div>
     )
 }
-
-export const FETCH_SERVICES_QUERY =
-gql`{
-    getServices
-    {
-        id
-        title
-        price
-        description
-        category
-    }
-}
-`
 
 export default ServiceGroup
