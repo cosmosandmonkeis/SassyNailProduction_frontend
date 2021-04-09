@@ -41,8 +41,7 @@ function Home(props) {
                             <Header>
                                 OPTIMIZE YOUR SPA EXPERIENCE
                                 <Header size='huge'>
-                                    Use our new online booking system to cut wait
-                                    times and view our services
+                                    Our new website is a Work-In-Progress! For any inquiries, call us for clarifications!
                                     <HeaderSubheader>
                                         We are here to make your spa experience the best it can be.
                                     </HeaderSubheader>
