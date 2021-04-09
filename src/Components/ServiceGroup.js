@@ -61,7 +61,7 @@ function ServiceGroup() {
                     />
                 </Menu>
             </div>
-            <CardGroup centered>
+            <CardGroup centered itemsPerRow={3}>
                 {
                     data.getServices &&
                     data.getServices.filter(service => (
