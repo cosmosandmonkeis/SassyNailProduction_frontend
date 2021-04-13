@@ -1,10 +1,11 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import {Menu} from 'semantic-ui-react'
 import {Link} from "react-router-dom";
 import {AuthContext} from "../context/auth";
 
 function DesktopMenuBar() {
 
+    const [isAdmin, setAdmin] = useState(false)
     const {user, logout} = useContext(AuthContext)
 
     const pathname = window.location.pathname
@@ -14,11 +15,18 @@ function DesktopMenuBar() {
 
     const handleItemClick = (e, {name}) => setActiveItem(name)
 
+    useEffect(() => {
+        if(user)
+            setAdmin(user.admin)
+    }, [user])
+
+    console.log(user)
+
     return (user) ? (
         (
             <Menu size='massive' color='teal'>
                 {
-                    user.admin === true ?
+                    isAdmin === true ?
                         <div>
                             <Menu.Item
                                 name='DASHBOARD'
