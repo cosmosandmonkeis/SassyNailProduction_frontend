@@ -20,8 +20,6 @@ function DesktopMenuBar() {
             setAdmin(user.admin)
     }, [user])
 
-    console.log(user)
-
     return (user) ? (
         (
             <Menu size='massive' color='teal'>
