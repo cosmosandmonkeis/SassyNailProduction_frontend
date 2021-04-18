@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import gql from 'graphql-tag'
 import {useQuery} from "@apollo/client";
 import {CardGroup, Dimmer, Loader, Menu, MenuItem} from "semantic-ui-react";
 import ServiceItem from "./ServiceItem";
+import {useViewport} from "../context/mobile";
 
 export const FETCH_SERVICES_QUERY =
 gql`{
@@ -29,9 +30,16 @@ function ServiceGroup() {
 
     const [activeItem, setActiveItem] = useState('manicures')
 
+    const size = useViewport()
+
+    const [width, setWidth] = useState(1080)
+
     const handleItemClick = (e, {name}) => {
         setActiveItem(name)
     }
+    useEffect(()=> {
+        setWidth(size.width)
+    }, [size])
 
     if (loading)
         return (
@@ -61,7 +69,7 @@ function ServiceGroup() {
                     />
                 </Menu>
             </div>
-            <CardGroup centered itemsPerRow={3}>
+            <CardGroup centered itemsPerRow={(width) > 500 ? 3 : 1}>
                 {
                     data.getServices &&
                     data.getServices.filter(service => (
