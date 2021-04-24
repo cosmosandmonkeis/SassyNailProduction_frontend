@@ -21,12 +21,11 @@ import AdminOnlyViewAllBookings from "./Pages/adminOnlyViewAllBookings";
 
 function App() {
     return (
-            <MobileViewProvider>
-                <AuthProvider>
-                    <Router>
-                        <MenuBar/>
-                        <div className='wrapping'>
-
+        <MobileViewProvider>
+            <AuthProvider>
+                <Router>
+                    <MenuBar/>
+                    <div className='wrapping'>
                         <Route exact path='/' component={Home}/>
                         <Route exact path='/services' component={Services}/>
                         <Route exact path='/bookings' component={Appointment}/>
@@ -35,12 +34,11 @@ function App() {
                         <ProtectRoute exact path='/success' component={Success}/>
                         <AdminRoute exact path='/profile' component={Profile}/>
                         <AdminRoute exact path='/view_all' component={AdminOnlyViewAllBookings}/>
-                        </div>
-
-                        <Footer/>
-                    </Router>
-                </AuthProvider>
-            </MobileViewProvider>
+                    </div>
+                    <Footer/>
+                </Router>
+            </AuthProvider>
+        </MobileViewProvider>
 
     )
 }
