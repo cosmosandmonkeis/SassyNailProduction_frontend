@@ -55,8 +55,8 @@ function CreateAppointmentModal() {
             <ModalContent>
                 <Form onSubmit={onSubmit} className={loading_create ? 'loading' : ''}>
                     <FormInput
-                        label='description'
-                        placeholder='Add your name followed by services you would like. Add any additional notes if necessary.'
+                        label='Type Your Name(s) + Phone Number + Services!'
+                        placeholder='Add your name(s) + phone number followed by services you would like. Add any additional notes if necessary.'
                         name='description'
                         value={descriptionVal}
                         error={!!errors.description}
@@ -76,7 +76,8 @@ function CreateAppointmentModal() {
                         type='submit' primary
                         labelPosition='right'
                         icon='checkmark'
-                        content="Create Appointment Booking!"/>
+                        content="Create Appointment Booking!"
+                    />
                 </Form>
                 <DisplayErrorGroup errors={errors}/>
             </ModalContent>
