@@ -2,14 +2,18 @@ import React from 'react'
 import {Card, CardContent, CardDescription, CardHeader, CardMeta} from "semantic-ui-react";
 
 function ServiceItem(props) {
-    const {title, description} = props.service
+    const {title, description, price} = props.service
 
     return (
         <Card>
             <CardContent>
                 <CardHeader as='a'>{title}</CardHeader>
-                <CardMeta> Description </CardMeta>
-                <CardDescription> {description} </CardDescription>
+                <span>
+                    <CardMeta> Price </CardMeta>
+                    <CardDescription> Starting ${price} </CardDescription>
+                    <CardMeta> Description </CardMeta>
+                    <CardDescription> {description} </CardDescription>
+                </span>
             </CardContent>
         </Card>
     )
