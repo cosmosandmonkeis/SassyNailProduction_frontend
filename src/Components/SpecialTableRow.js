@@ -28,6 +28,9 @@ function SpecialTableRow({id, createdAt, status, serviceType, adminMessage}) {
     const [modifiedMessage, setAdminMessage] = useState(adminMessage)
 
     const [updateAppBooking] = useMutation(UPDATE_APPOINTMENT_STATUS, {
+        update(_) {
+            window.location.reload(true)
+        },
         variables: {
             appointmentID: id,
             newStatus: newStatus,
