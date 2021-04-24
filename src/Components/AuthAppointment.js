@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import MakeAppointmentModal from "./MakeAppointmentModal";
 import AppointmentCardGroup from "./AppointmentCardGroup";
-import {Header} from "semantic-ui-react";
+import {Header, HeaderSubheader, Icon, Segment} from "semantic-ui-react";
 import {AuthContext} from "../context/auth";
 import {useQuery} from "@apollo/client";
 import gql from "graphql-tag";
@@ -16,6 +16,17 @@ function AuthAppointment({props}) {
 
     return (
         <div>
+            <Segment placeholder color='blue'>
+                <Header icon textAlign='center'>
+                    <Icon name='clock'/>
+                    <Header.Content>
+                        Times Available For Bookings!
+                    </Header.Content>
+                    <HeaderSubheader>
+                        Monday - Sunday: 10:00 AM to  6:00 PM
+                    </HeaderSubheader>
+                </Header>
+            </Segment>
             <div className='form-container'>
                 <MakeAppointmentModal props={props}/>
                 <Header as='h2' textAlign='center'>

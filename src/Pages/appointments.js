@@ -17,6 +17,17 @@ function Appointment(props) {
             {
                 user ? <AuthAppointment props={props}/> :
                     <div>
+                        <Segment placeholder color='blue'>
+                            <Header icon textAlign='center'>
+                                <Icon name='clock'/>
+                                <Header.Content>
+                                    Times Available For Bookings!
+                                </Header.Content>
+                                <HeaderSubheader>
+                                    Monday - Sunday: 10:00 AM to  6:00 PM
+                                </HeaderSubheader>
+                            </Header>
+                        </Segment>
                         <Segment placeholder color='red'>
                             <Header icon textAlign='center'>
                                 <Icon name='bullhorn'/>
