@@ -10,10 +10,8 @@ function Appointment(props) {
     const {user} = useContext(AuthContext)
     return (
         <div>
-            <Banner bigheader='Appointments Feature Under Testing!'
-                    subtext='Appointments need to be confirmed by administrators.
-                               Call 510-596-8802 for any inquiries.
-                               '/>
+            <Banner bigheader='Make Appointments!'
+                    subtext='Call 510-596-8802 for any inquiries. '/>
             {
                 user ? <AuthAppointment props={props}/> :
                     <div>

@@ -41,7 +41,7 @@ function Home(props) {
                             <Header>
                                 OPTIMIZE YOUR SPA EXPERIENCE
                                 <Header size='huge'>
-                                    Our new website is a Work-In-Progress! For any inquiries, call us for clarifications!
+                                    Our New website is a Work-In-Progress! For Any Inquiries, Call Us for Clarifications!
                                     <HeaderSubheader>
                                         We are here to make your spa experience the best it can be.
                                     </HeaderSubheader>
