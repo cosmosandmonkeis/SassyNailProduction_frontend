@@ -5,26 +5,25 @@ import gql from "graphql-tag";
 import {DateTimeInput} from "semantic-ui-calendar-react";
 import moment from 'moment'
 import DisplayErrorGroup from "./DisplayErrorGroup";
+import {useForm} from "../util/hooks";
 
 function CreateAppointmentModal() {
+
+    const initialState = {
+        name: '',
+        phonenum: '',
+        size: 1,
+        services: ''
+    }
 
     const [open, setOpen] = useState(false)
     const [errors, setErrors] = useState({})
 
-    const [descriptionVal, setDescriptionVal] = useState('')
+    const {onChange, onSubmit, values} = useForm(sendCallBack, initialState)
     const [date, setDate] = useState('')
-
-    const onChange = (event) => {
-        setDescriptionVal(event.target.value)
-    }
 
     const handleDateChange = (_, value) => {
         setDate(value)
-    }
-
-    const onSubmit = event => {
-        event.preventDefault()
-        sendAppointMutation()
     }
 
     const [sendAppointMutation, {loading_create}] = useMutation(MAKE_APP_BOOKING, {
@@ -35,16 +34,20 @@ function CreateAppointmentModal() {
             setErrors(err.graphQLErrors[0].extensions.exception.errors)
         },
         variables: {
-            description: descriptionVal,
+            description: `${values.name} ${values.phonenum} ${values.size} ${values.services} `,
             serviceDate: date
         }
     })
+
+    function sendCallBack() {
+        console.log()
+        sendAppointMutation()
+    }
 
     return (
         <Modal onClose={() => setOpen(false)}
                open={open}
                onOpen={() => {
-                   setDescriptionVal('')
                    setDate('')
                    setOpen(true)
                }}
@@ -55,12 +58,36 @@ function CreateAppointmentModal() {
             <ModalContent>
                 <Form onSubmit={onSubmit} className={loading_create ? 'loading' : ''}>
                     <FormInput
-                        label='Type Your Name(s) + Phone Number + Services!'
-                        placeholder='Add your name(s) + phone number followed by services you would like. Add any additional notes if necessary.'
-                        name='description'
-                        value={descriptionVal}
-                        error={!!errors.description}
+                        label='Name'
+                        placeholder='Name(s) of Party Members'
+                        name='name'
+                        value={values.name}
                         onChange={onChange}
+                        required
+                    />
+                    <FormInput
+                        label='Phone Number'
+                        placeholder='Phone Number to Call Back'
+                        name='phonenum'
+                        value={values.phonenum}
+                        onChange={onChange}
+                        required
+                    />
+                    <FormInput
+                        label='Party Size'
+                        placeholder='Party Size'
+                        name='size'
+                        value={values.size}
+                        onChange={onChange}
+                        required
+                    />
+                    <FormInput
+                        label='Services'
+                        placeholder='Services requested'
+                        name='services'
+                        value={values.services}
+                        onChange={onChange}
+                        required
                     />
                     <DateTimeInput
                         name="date"
