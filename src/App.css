@@ -1,5 +1,5 @@
 .wrapping {
-    min-height: calc(100vh - 5vh);
+    min-height: calc(95vh);
     position: relative;
 }
 
