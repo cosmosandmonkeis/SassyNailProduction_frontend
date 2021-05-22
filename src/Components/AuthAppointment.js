@@ -11,7 +11,7 @@ function AuthAppointment({props}) {
 
     const {user} = useContext(AuthContext)
 
-    const {loading_bookings, data: {getUserBookingsHistory: bookings} = {}} =
+    const {loading, data: {getUserBookingsHistory: bookings} = {}} =
         useQuery(FETCH_USER_APP_BOOKINGS, {variables: {username: user ? user.username : ''}})
 
     return (
@@ -33,7 +33,7 @@ function AuthAppointment({props}) {
                     Your past bookings listed here
                 </Header>
                 <AppointmentCardGroup
-                    loading_bookings={loading_bookings}
+                    loading_bookings={loading}
                     bookings={bookings}
                 />
             </div>
