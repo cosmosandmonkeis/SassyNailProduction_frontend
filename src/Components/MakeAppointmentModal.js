@@ -66,8 +66,8 @@ function CreateAppointmentModal() {
                         required
                     />
                     <FormInput
-                        label='Phone Number'
-                        placeholder='Phone Number to Call Back'
+                        label='10 Digit Phone Number'
+                        placeholder='10 Digit Phone Number to Call Back'
                         name='phonenum'
                         value={values.phonenum}
                         onChange={onChange}
