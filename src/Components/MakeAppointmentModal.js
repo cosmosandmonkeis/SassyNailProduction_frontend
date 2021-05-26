@@ -34,7 +34,7 @@ function CreateAppointmentModal() {
             setErrors(err.graphQLErrors[0].extensions.exception.errors)
         },
         variables: {
-            description: `${values.name} ${values.phonenum} ${values.size} ${values.services} `,
+            description: `Name:${values.name} Phone:${values.phonenum} Size:${values.size} Description:${values.services} `,
             serviceDate: date
         }
     })
