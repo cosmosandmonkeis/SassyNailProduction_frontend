@@ -18,6 +18,7 @@ import {
     Segment
 } from "semantic-ui-react";
 import {useViewport} from "../context/mobile";
+import LazyLoad from 'react-lazy-load';
 
 function Home(props) {
 
@@ -41,7 +42,8 @@ function Home(props) {
                             <Header>
                                 OPTIMIZE YOUR SPA EXPERIENCE
                                 <Header size='huge'>
-                                    Our New website is a Work-In-Progress! For Any Inquiries, Call Us for Clarifications!
+                                    Our New website is a Work-In-Progress! For Any Inquiries, Call Us for
+                                    Clarifications!
                                     <HeaderSubheader>
                                         We are here to make your spa experience the best it can be.
                                     </HeaderSubheader>
@@ -53,7 +55,9 @@ function Home(props) {
                             </Header>
                         </GridColumn>
                         <GridColumn width={6}>
-                            <Image src="https://i.ibb.co/zxtFZwf/Opi-nail-lacquer-600x600.png"/>
+                            <LazyLoad offset={25}>
+                                <Image src="https://i.ibb.co/zxtFZwf/Opi-nail-lacquer-600x600.png"/>
+                            </LazyLoad>
                         </GridColumn>
                     </GridRow>
                 </Grid>
@@ -73,9 +77,11 @@ function Home(props) {
                             <Container>
                                 <CardGroup itemsPerRow={mobileItems}>
                                     <Card>
-                                        <Image
-                                            src='https://i.ibb.co/2cj8XQZ/manicure-400x400.jpg'
-                                            rounded/>
+                                        <LazyLoad offset={25}>
+                                            <Image
+                                                src='https://i.ibb.co/2cj8XQZ/manicure-400x400.jpg'
+                                                rounded/>
+                                        </LazyLoad>
                                         <CardContent>
                                             <CardHeader>
                                                 Manicures
@@ -86,9 +92,11 @@ function Home(props) {
                                         </CardContent>
                                     </Card>
                                     <Card>
-                                        <Image
-                                            src='https://i.ibb.co/tJwKfpP/Spa-treatment-and-product-for-female-feet-and-foot-spa-Foot-bath-in-bowl-with-tropical-flowers-Thail.jpg'
-                                            rounded/>
+                                        <LazyLoad offset={25}>
+                                            <Image
+                                                src='https://i.ibb.co/tJwKfpP/Spa-treatment-and-product-for-female-feet-and-foot-spa-Foot-bath-in-bowl-with-tropical-flowers-Thail.jpg'
+                                                rounded/>
+                                        </LazyLoad>
                                         <CardContent>
                                             <CardHeader>
                                                 Pedicures
@@ -99,9 +107,11 @@ function Home(props) {
                                         </CardContent>
                                     </Card>
                                     <Card>
-                                        <Image
-                                            src='https://i.ibb.co/QHHZsvq/waxing-400x400.jpg'
-                                            rounded/>
+                                        <LazyLoad offset={25}>
+                                            <Image
+                                                src='https://i.ibb.co/QHHZsvq/waxing-400x400.jpg'
+                                                rounded/>
+                                        </LazyLoad>
                                         <CardContent>
                                             <CardHeader>
                                                 Waxings
