@@ -55,7 +55,7 @@ function Home(props) {
                             </Header>
                         </GridColumn>
                         <GridColumn width={6}>
-                            <LazyLoad offset={25}>
+                            <LazyLoad offset={5}>
                                 <Image src="https://i.ibb.co/zxtFZwf/Opi-nail-lacquer-600x600.png"/>
                             </LazyLoad>
                         </GridColumn>
