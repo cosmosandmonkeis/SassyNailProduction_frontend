@@ -53,7 +53,7 @@ function Home(props) {
                             </Header>
                         </GridColumn>
                         <GridColumn width={6}>
-                            <Image src="https://i.ibb.co/HXdzn06/opi-nail-lacquer.png"/>
+                            <Image src="https://i.ibb.co/zxtFZwf/Opi-nail-lacquer-600x600.png"/>
                         </GridColumn>
                     </GridRow>
                 </Grid>
@@ -74,7 +74,7 @@ function Home(props) {
                                 <CardGroup itemsPerRow={mobileItems}>
                                     <Card>
                                         <Image
-                                            src='https://i.ibb.co/6DZZF0Q/lipstick-hand.jpg'
+                                            src='https://i.ibb.co/2cj8XQZ/manicure-400x400.jpg'
                                             rounded/>
                                         <CardContent>
                                             <CardHeader>
@@ -87,7 +87,7 @@ function Home(props) {
                                     </Card>
                                     <Card>
                                         <Image
-                                            src='https://i.ibb.co/8c9w71J/vinegar-manicure.jpg'
+                                            src='https://i.ibb.co/tJwKfpP/Spa-treatment-and-product-for-female-feet-and-foot-spa-Foot-bath-in-bowl-with-tropical-flowers-Thail.jpg'
                                             rounded/>
                                         <CardContent>
                                             <CardHeader>
@@ -100,7 +100,7 @@ function Home(props) {
                                     </Card>
                                     <Card>
                                         <Image
-                                            src='https://i.ibb.co/7XyXHNn/waxbrow-fullface.jpg'
+                                            src='https://i.ibb.co/QHHZsvq/waxing-400x400.jpg'
                                             rounded/>
                                         <CardContent>
                                             <CardHeader>
