@@ -72,6 +72,7 @@ function CreateAppointmentModal() {
                         value={values.phonenum}
                         onChange={onChange}
                         required
+                        maxLength={10}
                     />
                     <FormInput
                         label='Party Size'
