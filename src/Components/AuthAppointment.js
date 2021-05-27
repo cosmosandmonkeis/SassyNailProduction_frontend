@@ -43,9 +43,9 @@ function AuthAppointment({props}) {
 
 const FETCH_USER_APP_BOOKINGS =
 gql`
-    query getUserBookingsHistory($username: String!)
+    query getUserBookingsHistory
     {
-        getUserBookingsHistory(username: $username)
+        getUserBookingsHistory
         {
             createdAt
             status
