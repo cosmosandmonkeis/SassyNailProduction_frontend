@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Button, Form, FormInput, Modal, ModalActions, ModalContent, ModalHeader} from "semantic-ui-react";
+import {Button, Form, FormInput, Modal, ModalActions, ModalContent, ModalHeader, Checkbox} from "semantic-ui-react";
 import {useMutation} from "@apollo/client";
 import gql from "graphql-tag";
 import {DateTimeInput} from "semantic-ui-calendar-react";
@@ -26,6 +26,12 @@ function CreateAppointmentModal() {
         setDate(value)
     }
 
+    const [checked, setChecked] = useState(true)
+
+    const handleChecked = () => {
+        setChecked(!checked)
+    }
+
     const [sendAppointMutation, {loading_create}] = useMutation(MAKE_APP_BOOKING, {
         update(_) {
             window.location.reload(true)
@@ -40,7 +46,6 @@ function CreateAppointmentModal() {
     })
 
     function sendCallBack() {
-        console.log()
         sendAppointMutation()
     }
 
@@ -100,11 +105,20 @@ function CreateAppointmentModal() {
                         onChange={(a, {name, value}) => handleDateChange(name, value)}
                         error={!!errors.dateString}
                     />
+                    <Checkbox
+                        label='I consent to SMS messages and Covid-19 consent form.'
+                        onClick={handleChecked}
+                    />
                     <Button
                         type='submit' primary
                         labelPosition='right'
                         icon='checkmark'
                         content="Create Appointment Booking!"
+                        fluid
+                        style={{
+                            marginTop: '20px'
+                        }}
+                        disabled={checked}
                     />
                 </Form>
                 <DisplayErrorGroup errors={errors}/>
