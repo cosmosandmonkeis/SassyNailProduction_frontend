@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Button, Form, FormInput, Modal, ModalActions, ModalContent, ModalHeader, Checkbox} from "semantic-ui-react";
+import {Button, Checkbox, Form, FormInput, Modal, ModalActions, ModalContent, ModalHeader} from "semantic-ui-react";
 import {useMutation} from "@apollo/client";
 import gql from "graphql-tag";
 import {DateTimeInput} from "semantic-ui-calendar-react";
@@ -104,11 +104,17 @@ function CreateAppointmentModal() {
                         maxDate={moment().add(1, 'month')}
                         onChange={(a, {name, value}) => handleDateChange(name, value)}
                         error={!!errors.dateString}
+                        clearable
                     />
                     <Checkbox
-                        label='I consent to SMS messages and Covid-19 consent form.'
+                        label='I consent to SMS messages and Covid-19 consent form. '
                         onClick={handleChecked}
                     />
+                    <a href="https://docs.google.com/document/d/1IyGrwlOclXGBVso5Scu9I44QLpachtl0ix0tcrQmvnA/edit?usp=sharing"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Covid-19 Consent Form
+                    </a>
                     <Button
                         type='submit' primary
                         labelPosition='right'
