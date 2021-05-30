@@ -108,8 +108,8 @@ function CreateAppointmentModal() {
                     />
                     <Checkbox
                         label={
-                            <label>I consent to SMS messages and 
-                                <a href="https://docs.google.com/document/d/1IyGrwlOclXGBVso5Scu9I44QLpachtl0ix0tcrQmvnA/edit?usp=sharing"
+                            <label>I consent to SMS messages 
+                                and <a href="https://docs.google.com/document/d/1IyGrwlOclXGBVso5Scu9I44QLpachtl0ix0tcrQmvnA/edit?usp=sharing"
                                     target="_blank"
                                     rel="noopener noreferrer">
                                     Covid-19 Consent Form
