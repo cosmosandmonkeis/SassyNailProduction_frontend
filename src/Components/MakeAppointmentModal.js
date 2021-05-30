@@ -96,6 +96,7 @@ function CreateAppointmentModal() {
                         required
                     />
                     <DateTimeInput
+                        label = "Choose a Date and Time"
                         name="date"
                         dateTimeFormat="LLLL"
                         timeFormat="AMPM"
