@@ -36,6 +36,13 @@ function MobileMenuBar() {
                                         as={Link}
                                         to='/view_all'
                                     />
+                                    <Menu.Item
+                                        name='SALES'
+                                        active={activeItem === 'SALES'}
+                                        onClick={handleItemClick}
+                                        as={Link}
+                                        to='/sales'
+                                    />
                                 </div>
                                 :
                                 <Menu.Item

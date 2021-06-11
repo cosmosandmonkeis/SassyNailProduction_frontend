@@ -25,7 +25,7 @@ function DesktopMenuBar() {
             <Menu size='massive' color='teal'>
                 {
                     isAdmin === true ?
-                        <div>
+                        <Menu.Menu>
                             <Menu.Item
                                 name='DASHBOARD'
                                 active={activeItem === 'DASHBOARD'}
@@ -40,7 +40,14 @@ function DesktopMenuBar() {
                                 as={Link}
                                 to='/view_all'
                             />
-                        </div>
+                            <Menu.Item
+                                name='SALES'
+                                active={activeItem === 'SALES'}
+                                onClick={handleItemClick}
+                                as={Link}
+                                to='/sales'
+                            />
+                        </Menu.Menu>
                         :
                         <Menu.Item
                             name={user.username}
