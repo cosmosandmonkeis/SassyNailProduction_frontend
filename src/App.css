@@ -1,3 +1,4 @@
+
 .wrapping {
     min-height: calc(95vh);
     position: relative;
@@ -15,7 +16,7 @@
 
 /* Banner CSS */
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/christmas_bg_2021.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/christmas-tree-bokeh-wallpaper.jpg);
     background-attachment: fixed;
     height: 30vh;
     background-position: center;
@@ -36,7 +37,7 @@
 
 /* Banner CSS */
 .home-hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/christmas_bg_2021.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/christmas-tree-bokeh-wallpaper.jpg);
     background-attachment: fixed;
     height: 90vh;
     background-position: center;
