@@ -18,7 +18,6 @@ import {MobileViewProvider} from "./context/mobile";
 import AdminRoute from "./util/AdminRoute";
 import Profile from "./Pages/profile";
 import AdminOnlyViewAllBookings from "./Pages/adminOnlyViewAllBookings";
-import Sales from "./Pages/sales";
 
 function App() {
     return (
