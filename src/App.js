@@ -35,7 +35,7 @@ function App() {
                         <ProtectRoute exact path='/success' component={Success}/>
                         <AdminRoute exact path='/profile' component={Profile}/>
                         <AdminRoute exact path='/view_all' component={AdminOnlyViewAllBookings}/>
-                        <AdminRoute exact path='/sales' component={Sales}/>
+                        {/*<AdminRoute exact path='/sales' component={Sales}/>*/}
                     </div>
                     <Footer/>
                 </Router>
