@@ -79,7 +79,7 @@ function Home(props) {
                                     <Card>
                                         <LazyLoad offset={25}>
                                             <Image
-                                                src='https://i.ibb.co/2cj8XQZ/manicure-400x400.jpg'
+                                                src='/manicure-400x400.jpg'
                                                 rounded/>
                                         </LazyLoad>
                                         <CardContent>
@@ -94,7 +94,7 @@ function Home(props) {
                                     <Card>
                                         <LazyLoad offset={25}>
                                             <Image
-                                                src='https://i.ibb.co/tJwKfpP/Spa-treatment-and-product-for-female-feet-and-foot-spa-Foot-bath-in-bowl-with-tropical-flowers-Thail.jpg'
+                                                src='/Spa-treatment-and-product-for-female-feet-and-foot-spa-Foot-bath-in-bowl-with-tropical-flowers-Thail.jpg'
                                                 rounded/>
                                         </LazyLoad>
                                         <CardContent>
@@ -109,7 +109,7 @@ function Home(props) {
                                     <Card>
                                         <LazyLoad offset={25}>
                                             <Image
-                                                src='https://i.ibb.co/QHHZsvq/waxing-400x400.jpg'
+                                                src='/waxing-400x400.jpg'
                                                 rounded/>
                                         </LazyLoad>
                                         <CardContent>
