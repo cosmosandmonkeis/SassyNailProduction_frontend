@@ -77,11 +77,9 @@ function Home(props) {
                             <Container>
                                 <CardGroup itemsPerRow={mobileItems}>
                                     <Card>
-                                        <LazyLoad offset={25}>
-                                            <Image
-                                                src='/manicure-400x400.jpg'
-                                                rounded/>
-                                        </LazyLoad>
+                                        <Image
+                                            src='/manicure-400x400.jpg'
+                                            rounded/>
                                         <CardContent>
                                             <CardHeader>
                                                 Manicures
@@ -92,11 +90,9 @@ function Home(props) {
                                         </CardContent>
                                     </Card>
                                     <Card>
-                                        <LazyLoad offset={25}>
-                                            <Image
-                                                src='/Spa-treatment-and-product-for-female-feet-and-foot-spa-Foot-bath-in-bowl-with-tropical-flowers-Thail.jpg'
-                                                rounded/>
-                                        </LazyLoad>
+                                        <Image
+                                            src='/Spa-treatment-and-product-for-female-feet-and-foot-spa-Foot-bath-in-bowl-with-tropical-flowers-Thail.jpg'
+                                            rounded/>
                                         <CardContent>
                                             <CardHeader>
                                                 Pedicures
@@ -107,11 +103,9 @@ function Home(props) {
                                         </CardContent>
                                     </Card>
                                     <Card>
-                                        <LazyLoad offset={25}>
-                                            <Image
-                                                src='/waxing-400x400.jpg'
-                                                rounded/>
-                                        </LazyLoad>
+                                        <Image
+                                            src='/waxing-400x400.jpg'
+                                            rounded/>
                                         <CardContent>
                                             <CardHeader>
                                                 Waxings
