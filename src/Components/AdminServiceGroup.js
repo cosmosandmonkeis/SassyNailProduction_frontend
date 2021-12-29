@@ -26,30 +26,28 @@ function AdminServiceGroup() {
 
     const setDeletedItem = (event) => {
         event.preventDefault()
-        if (event.target.getAttribute('data-index') !== null)
-            setItemSelected(event.target.getAttribute('data-index'))
+        setItemSelected(event.currentTarget.getAttribute('data_index'))
     }
+
+    const serviceOptions = services && services.map(service => (
+            {
+                key: service.id,
+                data_index: service.id,
+                text: service.title + ' $' + service.price,
+                description: service.description,
+                onClick: setDeletedItem
+            }
+        ))
 
     return (
         <div>
             <Header>
                 Selected item: {itemSelected}
             </Header>
-            <Dropdown inline text='Select Service to Delete'>
-                <Dropdown.Menu>
-                    {
-                        services && services.map(service => (
-                            <Dropdown.Item
-                                key={service.id}
-                                data-index={service.id}
-                                text={service.title + ' $' + service.price}
-                                description={service.description}
-                                onClick={setDeletedItem}
-                            />
-                        ))
-                    }
-                </Dropdown.Menu>
-            </Dropdown>
+            <Dropdown inline text='Select Service to Delete'
+                      scrolling
+                      options={serviceOptions}
+            />
             <Button
                 primary
                 content='Delete Selected Service'
