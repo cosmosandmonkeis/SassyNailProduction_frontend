@@ -38,8 +38,8 @@ function AuthAppointment({props}) {
                             Times Available For Bookings! <br/>
                         </Header.Content>
                         <HeaderSubheader>
-                            Monday - Saturday: 9:30 AM to 7:00 PM <br/>
-                            Sunday: 10:00 AM to 6:00 PM
+                            Monday - Friday: 10:00 AM to 6:00 PM <br/>
+                            Online appointments closed for Saturday and Sunday.
                         </HeaderSubheader>
                     </Header>
                 </Segment>
