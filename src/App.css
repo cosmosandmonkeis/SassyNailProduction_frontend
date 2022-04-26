@@ -16,7 +16,7 @@
 
 /* Banner CSS */
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/christmas-tree-bokeh-wallpaper.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/overlay_hand.jpg);
     background-attachment: fixed;
     height: 30vh;
     background-position: center;
@@ -37,7 +37,7 @@
 
 /* Banner CSS */
 .home-hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/christmas-tree-bokeh-wallpaper.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/overlay_hand.jpg);
     background-attachment: fixed;
     height: 90vh;
     background-position: center;
