@@ -33,7 +33,9 @@ function Home(props) {
         <div>
             <HomePageBanner props={props}
                             big_header_text='Sassy Nails Spa'
-                            subtext='We will be closed for 12/25/21 and will be open 12/26/21!'
+                            subtext='We will be closed July 4th. Call us to make appointments July 2nd and 3rd. Online
+                            appointments will be closed this July 4th weekend. Online appointments made July 2nd, 3rd,
+                            and 4th will be canceled.'
             />
             <Container>
                 <Grid>
