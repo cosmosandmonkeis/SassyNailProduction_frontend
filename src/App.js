@@ -8,7 +8,7 @@ import Home from './Pages/home'
 import Login from './Pages/login'
 import Register from "./Pages/register";
 import Services from "./Pages/services";
-import Appointment from "./Pages/appointments";
+// import Appointment from "./Pages/appointments";
 import {AuthProvider} from "./context/auth";
 import AuthRoute from "./util/AuthRoute";
 import ProtectRoute from "./util/ProtectRoute";
