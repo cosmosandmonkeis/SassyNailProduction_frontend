@@ -8,7 +8,7 @@ import Home from './Pages/home'
 import Login from './Pages/login'
 import Register from "./Pages/register";
 import Services from "./Pages/services";
-// import Appointment from "./Pages/appointments";
+import Appointment from "./Pages/appointments";
 import {AuthProvider} from "./context/auth";
 import AuthRoute from "./util/AuthRoute";
 import ProtectRoute from "./util/ProtectRoute";
@@ -28,7 +28,7 @@ function App() {
                     <div className='wrapping'>
                         <Route exact path='/' component={Home}/>
                         <Route exact path='/services' component={Services}/>
-                        {/*<Route exact path='/bookings' component={Appointment}/>*/}
+                        <Route exact path='/bookings' component={Appointment}/>
                         <AuthRoute exact path='/login' component={Login}/>
                         <AuthRoute exact path='/register' component={Register}/>
                         <ProtectRoute exact path='/success' component={Success}/>
