@@ -33,7 +33,7 @@ function Home(props) {
         <div>
             <HomePageBanner props={props}
                             big_header_text='Sassy Nails Spa'
-                            subtext='We will be closed July 4th. Happy holidays!'
+                            subtext='We will be closed September 5th in observance of Labor Day.'
             />
             <Container>
                 <Grid>
