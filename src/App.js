@@ -28,7 +28,7 @@ function App() {
                     <div className='wrapping'>
                         <Route exact path='/' component={Home}/>
                         <Route exact path='/services' component={Services}/>
-                        {/*<Route exact path='/bookings' component={Appointment}/>*/}
+                        <Route exact path='/bookings' component={Appointment}/>
                         <AuthRoute exact path='/login' component={Login}/>
                         <AuthRoute exact path='/register' component={Register}/>
                         <ProtectRoute exact path='/success' component={Success}/>

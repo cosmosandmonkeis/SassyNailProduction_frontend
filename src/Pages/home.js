@@ -33,8 +33,7 @@ function Home(props) {
         <div>
             <HomePageBanner props={props}
                             big_header_text='Sassy Nails Spa'
-                            subtext='We will be closed September 5th, 2022 in observance of Labor Day.
-                            Please call (510) 596-8802 for bookings.'
+                            subtext='Welcome! Offering 20% off all Waxing and Gel-X services. Walk-ins welcome. Please call us for more information.'
             />
             <Container>
                 <Grid>
