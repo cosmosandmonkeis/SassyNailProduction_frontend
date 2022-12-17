@@ -15,11 +15,15 @@ function HomePageBanner({props, big_header_text, subtext}) {
                     <Header.Subheader>
                         {subtext}
                     </Header.Subheader>
+                    <Header.Subheader>
+                        <strong>We are currently under website maintenance. Appointments can be in-person or over the phone
+                            at <a href="tel:510-596-8802">(510) 596-8802</a> </strong>
+                    </Header.Subheader>
                 </Header>
-                <Button primary animated='fade' onClick={changeRoute}>
-                    <Button.Content visible>Checkout our services</Button.Content>
-                    <Button.Content hidden><Icon name='right arrow'/></Button.Content>
-                </Button>
+                {/*<Button primary animated='fade' onClick={changeRoute}>*/}
+                {/*    <Button.Content visible>Checkout our services</Button.Content>*/}
+                {/*    <Button.Content hidden><Icon name='right arrow'/></Button.Content>*/}
+                {/*</Button>*/}
             </div>
         </div>
     )

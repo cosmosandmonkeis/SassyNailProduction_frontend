@@ -24,7 +24,7 @@ function App() {
         <MobileViewProvider>
             <AuthProvider>
                 <Router>
-                    <MenuBar/>
+                    {/*<MenuBar/>*/}
                     <div className='wrapping'>
                         <Route exact path='/' component={Home}/>
                         {/*<Route exact path='/services' component={Services}/>*/}

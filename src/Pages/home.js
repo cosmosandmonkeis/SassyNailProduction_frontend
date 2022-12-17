@@ -33,7 +33,7 @@ function Home(props) {
         <div>
             <HomePageBanner props={props}
                             big_header_text='Sassy Nails Spa'
-                            subtext='Welcome! Offering 20% off all Waxing and Gel-X services. Walk-ins welcome. Please call us for more information.'
+                            subtext='Welcome! Offering 20% off all Waxing and Gel-X services. Please call us for more information.'
             />
             <Container>
                 <Grid>
@@ -48,10 +48,10 @@ function Home(props) {
                                         We are here to make your spa experience the best it can be.
                                     </HeaderSubheader>
                                 </Header>
-                                <Button animated='fade' onClick={changeRoute} primary>
-                                    <Button.Content visible>Make an Appointment Now!</Button.Content>
-                                    <Button.Content hidden><Icon name='right arrow'/></Button.Content>
-                                </Button>
+                                {/*<Button animated='fade' onClick={changeRoute} primary>*/}
+                                {/*    <Button.Content visible>Make an Appointment Now!</Button.Content>*/}
+                                {/*    <Button.Content hidden><Icon name='right arrow'/></Button.Content>*/}
+                                {/*</Button>*/}
                             </Header>
                         </GridColumn>
                         <GridColumn width={6}>
