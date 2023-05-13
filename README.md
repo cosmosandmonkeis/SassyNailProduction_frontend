@@ -1,4 +1,4 @@
-# Frontend portion of Sassy Nails Spa
+# Frontend portion of Sassy Nails Spa - Deprecated
 
 The react frontend for sassynailsoakland.com; currently connected with subdomain URL: https://gracious-pare-c9e199.netlify.app/. Domain URL: https://sassynailsoakland.com/.
 
